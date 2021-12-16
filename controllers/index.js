@@ -12,7 +12,32 @@ const createTeam = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+const createPlayer = async (req, res) => {
+  try {
+    const player = await new Player(req.body);
+    await player.save();
+    return res.status(201).json({
+      player
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+const getTeamById = async (req, res) => {
+  try {
+    const { _id } = req.params;
+    const team = await Team.findById(_id);
+    if (team) {
+      return res.status(200).json({ team });
+    }
+    return res.status(404).send(`Team with the specified ID does not exist`);
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
 
 module.exports = {
-  createTeam
+  createTeam,
+  createPlayer,
+  getTeamById
 };
