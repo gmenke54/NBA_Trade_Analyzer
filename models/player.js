@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const Player = new Schema(
   {
+    // refactor with data from external API:
     // rating: { type: Number, required: true },
     // position: { type: String, required: true },
     name: { type: String, required: true },
