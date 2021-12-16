@@ -43,10 +43,66 @@ const getAllPlayers = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+// more efficient way to get all the players on a team:
+const getPlayersOnTeam = async (req, res) => {
+  try {
+    const { team_Id } = req.params;
+    const players = await Player.find({ team_Id });
+    return res.status(200).json({ players });
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+const getAllTeams = async (req, res) => {
+  try {
+    const teams = await Team.find();
+    return res.status(200).json({ teams });
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+const deleteTeam = async (req, res) => {
+  try {
+    const { _id } = req.params;
+    const deleted = await Team.findByIdAndDelete(_id);
+    if (deleted) {
+      return res.status(200).send('Team deleted');
+    }
+    throw new Error('Team not found');
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+const deletePlayer = async (req, res) => {
+  try {
+    const { _id } = req.params;
+    const deleted = await Player.findByIdAndDelete(_id);
+    if (deleted) {
+      return res.status(200).send('Player deleted');
+    }
+    throw new Error('Player not found');
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+// NEED TO ADD A PUT REQUEST
+// https://www.linkedin.com/pulse/building-es6-crud-api-nodejs-expressjs-babel-kanti-vekariya/?articleId=6654378570548379648
+// const updateTeamName = async (req, res) => {
+//   try {
+//   }
+// }
 
 module.exports = {
   createTeam,
   createPlayer,
   getTeamById,
-  getAllPlayers
+  getAllPlayers,
+  getAllTeams,
+  getPlayersOnTeam,
+  deleteTeam,
+  deletePlayer
 };
