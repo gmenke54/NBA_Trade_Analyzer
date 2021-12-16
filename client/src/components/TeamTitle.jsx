@@ -2,13 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const TeamTitle = (props) => {
-  // const deletePlayer = () => {
-  //   axios.delete(`http://localhost:3001/api/players/details/${props._id}`);
-  //   // DO THIS WITHOUT RELOADING THE WHOLE PAGE:
-  //   window.location.reload()
-  // }
-
-
   const [updatedTeam, setUpdatedTeam] = useState({
     team_Name:``,
     manager_Name: props.manager_Name

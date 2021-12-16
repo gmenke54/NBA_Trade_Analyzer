@@ -11,12 +11,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Nav />
       </header>
-      <Home />
-      {/* <Switch>
+      <Switch>
         <Route exact path="/" component={(props) => <Home {...props} />} />
         <Route exact path="/about" component={About} />
-      </Switch> */}
+      </Switch>
     </div>
   );
 }

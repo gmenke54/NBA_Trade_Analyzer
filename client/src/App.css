@@ -49,3 +49,9 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  width: 87vw;
+}
