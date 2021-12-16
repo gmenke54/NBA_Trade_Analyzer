@@ -14,11 +14,12 @@ router.get('/teams/details/:_id', controllers.getTeamById);
 
 router.post('/teams', controllers.createTeam);
 
-// this route may be broken; it is untested:
 router.post('/players', controllers.createPlayer);
 
 router.delete('/players/details/:_id', controllers.deletePlayer);
 
 router.delete('/teams/details/:_id', controllers.deleteTeam);
+
+router.put('/teams/details/:_id', controllers.updateTeam);
 
 module.exports = router;

@@ -97,6 +97,23 @@ const deletePlayer = async (req, res) => {
 //   }
 // }
 
+const updateTeam = async (req, res) => {
+  try {
+    const { _id } = req.params;
+    await Team.findByIdAndUpdate(_id, req.body, { new: true }, (err, team) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      if (!plant) {
+        res.status(500).send('Team not found!');
+      }
+      return res.status(200).json(team);
+    });
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
 module.exports = {
   createTeam,
   createPlayer,
@@ -105,5 +122,6 @@ module.exports = {
   getAllTeams,
   getPlayersOnTeam,
   deleteTeam,
-  deletePlayer
+  deletePlayer,
+  updateTeam
 };
