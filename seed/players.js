@@ -11,6 +11,7 @@ const main = async () => {
   const players = [
     {
       name: 'Donovan Mitchell',
+      // possible error: check that _id is the correct syntax here
       team_Id: teamA[0]._id
     },
     {
