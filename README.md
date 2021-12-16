@@ -24,16 +24,16 @@ This is a full CRUD browser-based Fantasy Basketball Trade-Analyzer Program writ
 
 ## **_Screenshots_**
 
-<!-- ADD WIRE FRAMEs HERE -->
-
 User Interface Mock-up:
 ![**mockup**](resources/mockUp.jpeg)
 
 Entity Relationship Diagram:
-![**ERD**](resources/mockUp.jpeg)
+![**ERD**](resources/ERD.jpeg)
 
 Component Hierarchy Diagram:
-![**CHD**](resources/mockUp.jpeg)
+![**CHD**](resources/CHD.jpeg)
+
+<!-- ADD SCREENSHOT HERE -->
 
 Final Application Screenshot:
 ![**screenshot**](resources/screenshot.png)
