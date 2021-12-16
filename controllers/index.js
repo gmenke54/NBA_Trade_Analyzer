@@ -104,14 +104,12 @@ const updateTeam = async (req, res) => {
       if (err) {
         res.status(500).send(err);
       }
-      if (!plant) {
+      if (!team) {
         res.status(500).send('Team not found!');
       }
       return res.status(200).json(team);
     });
-  } catch (error) {
-    return res.status(500).send(error.message);
-  }
+  } catch (error) {}
 };
 
 module.exports = {
