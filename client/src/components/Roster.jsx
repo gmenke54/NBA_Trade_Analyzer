@@ -11,6 +11,7 @@ const Roster = (props) => {
             <PlayerCard
               key={player._id}
               name={player.name}
+              _id={player._id}
               />
           )
         }
