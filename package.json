@@ -1,0 +1,23 @@
+{
+  "name": "u2_project_fbb_trade_analyzer",
+  "version": "1.0.0",
+  "description": "### Grant Menke",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmenke54/u2_project_FBB_Trade_Analyzer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmenke54/u2_project_FBB_Trade_Analyzer/issues"
+  },
+  "homepage": "https://github.com/gmenke54/u2_project_FBB_Trade_Analyzer#readme",
+  "dependencies": {
+    "mongoose": "^6.1.2"
+  }
+}
