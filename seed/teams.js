@@ -6,12 +6,12 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const main = async () => {
   const teams = [
     {
-      team_Name: 'Fields of Dreams',
-      manager_Name: Grant
+      team_Name: 'TeamA',
+      manager_Name: 'Grant'
     },
     {
-      team_Name: 'Tempo Cantina',
-      manager_Name: Francis
+      team_Name: 'TeamB',
+      manager_Name: 'Jason'
     }
   ];
 
