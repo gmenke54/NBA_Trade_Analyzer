@@ -90,6 +90,7 @@ const deletePlayer = async (req, res) => {
 };
 
 // NEED TO ADD A PUT REQUEST
+// REFER TO MONGOOSE PLANTS LAB
 // https://www.linkedin.com/pulse/building-es6-crud-api-nodejs-expressjs-babel-kanti-vekariya/?articleId=6654378570548379648
 // const updateTeamName = async (req, res) => {
 //   try {

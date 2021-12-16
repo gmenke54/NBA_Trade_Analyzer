@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Roster from "./Roster";
+import AddPlayer from "./AddPlayer";
 
 
 const TeamBox = (props) => {
@@ -24,6 +25,7 @@ const TeamBox = (props) => {
       <h3>{props.manager_Name}</h3>
       <h5>{props.team_Id}</h5>
       </section>
+      <AddPlayer team_Id={props.team_Id}/>
       <Roster players={players}/>
     </div>
   )
