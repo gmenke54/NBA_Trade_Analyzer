@@ -14,14 +14,17 @@ const AddPlayer = (props) => {
       name: newPlayer.name,
       team_Id: newPlayer.team_Id
     })
+    
     const res = await axios.get(`http://localhost:3001/api/players`)
     const allPlayers = res.data.players
     const teamPlayers = allPlayers.filter((player) => {
       return player.team_Id === props.team_Id
     })
     setPlayers(teamPlayers)
+
     let anotherPlayer = {
-      name: ``
+      name: ``,
+      team_Id: props.team_Id
     }
     setNewPlayer(anotherPlayer)
   }

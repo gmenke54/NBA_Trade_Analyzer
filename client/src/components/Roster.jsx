@@ -14,7 +14,11 @@ const Roster = (props) => {
   return (
     <div className="roster">
       <h2>Players:</h2>
-      <AddPlayer team_Id={props.team_Id} players={players} setPlayers={setPlayers} />
+      <AddPlayer 
+        team_Id={props.team_Id} 
+        players={players} 
+        setPlayers={setPlayers} 
+      />
       {players.map((player) => {
         {
           return (
