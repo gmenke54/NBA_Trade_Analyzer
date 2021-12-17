@@ -2,16 +2,22 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const AddTeam = (props) => {
+  const { teams, setTeams } = props
   const [newTeam, setNewTeam] = useState({
     team_Name:``,
     manager_Name:``
   })
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:3001/api/teams`, {
+    await axios.post(`http://localhost:3001/api/teams`, {
       team_Name: newTeam.team_Name,
       manager_Name: newTeam.manager_Name
     })
+    
+    const res = await axios.get(`http://localhost:3001/api/teams`)
+    console.log(res)
+    setTeams(res.data.teams)
+    
     let anotherTeam = {
       team_Name:``,
       manager_Name:``
@@ -19,7 +25,7 @@ const AddTeam = (props) => {
     setNewTeam(anotherTeam)
     // DO THIS WITHOUT RELOADING THE WHOLE PAGE:
     // follow the format of the delete function using .push instead of finding and deleting
-    window.location.reload()
+    // window.location.reload()
   }
   const handleChange = (e) => {
     const newestTeam = { ...newTeam }
