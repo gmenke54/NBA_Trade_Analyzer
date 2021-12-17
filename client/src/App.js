@@ -5,6 +5,7 @@ import React from 'react';
 import Home from './pages/Home';
 import Nav from './components/Nav';
 import About from './pages/About';
+import PlayerDetails from './pages/PlayerDetails';
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
       <Switch>
         <Route exact path="/" component={(props) => <Home {...props} />} />
         <Route exact path="/about" component={About} />
+        <Route
+          path="/players/details/:name"
+          component={(props) => <PlayerDetails {...props} />}
+        />
       </Switch>
     </div>
   );
