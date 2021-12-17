@@ -38,22 +38,6 @@ const TeamBox = (props) => {
       <Roster team_Id={props.team_Id} players={players} setPlayers={setPlayers} />
     </div>
   )
-  
-  // Working conditional rendering:
-  // if (teamCreated === true) {
-  //   return (
-  //     <div>
-  //       <TeamTitle updateTeamName={updateTeamName} team_Name={props.team_Name} manager_Name={props.manager_Name} team_Id={props.team_Id} />
-  //       <Roster team_Id={props.team_Id} players={players} setPlayers={setPlayers} />
-  //     </div>
-  //   )
-  // } else {
-  //   return (
-  //     <div>
-  //       <AddTeam  teams={teams} setTeams={setTeams} teamCreated={teamCreated} setTeamCreated={setTeamCreated} />
-  //     </div>
-  //   )
-  // }
 }
 
 export default TeamBox
