@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Roster from "./Roster";
-import AddPlayer from "./AddPlayer";
+
 import AddTeam from "./AddTeam";
 import TeamTitle from "./TeamTitle";
 
@@ -9,6 +9,7 @@ import TeamTitle from "./TeamTitle";
 const TeamBox = (props) => {
   const { teams, setTeams } = props
   const [players, setPlayers] = useState([]);
+  const [teamCreated, setTeamCreated] = useState(false)
 
   const updateTeamName = (curTeamId, updatedName) => {
     let changedTeam = teams.find((team) => {
@@ -36,8 +37,7 @@ const TeamBox = (props) => {
     <div>
       <AddTeam />
       <TeamTitle updateTeamName={updateTeamName} team_Name={props.team_Name} manager_Name={props.manager_Name} team_Id={props.team_Id} />
-      <AddPlayer team_Id={props.team_Id}/>
-      <Roster players={players} setPlayers={setPlayers} />
+      <Roster team_Id={props.team_Id} players={players} setPlayers={setPlayers} />
     </div>
   )
 }

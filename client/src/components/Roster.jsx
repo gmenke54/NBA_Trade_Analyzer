@@ -1,8 +1,10 @@
 import React, {useEffect} from "react";
 import PlayerCard from "./PlayerCard";
+import AddPlayer from "./AddPlayer";
 
 const Roster = (props) => {
   const { setPlayers, players } = props
+  
   const delPlayer = (curPlyId) => {
     setPlayers(players.filter((player) => {
       return player._id !== curPlyId
@@ -12,7 +14,8 @@ const Roster = (props) => {
   return (
     <div className="roster">
       <h2>Players:</h2>
-      {props.players.map((player) => {
+      <AddPlayer team_Id={props.team_Id} players={players} setPlayers={setPlayers} />
+      {players.map((player) => {
         {
           return (
             <PlayerCard

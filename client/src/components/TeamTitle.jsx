@@ -17,9 +17,7 @@ const TeamTitle = (props) => {
       team_Name:``,
       manager_Name: props.manager_Name
     }
-    setUpdatedTeam(anotherTeam)
-
-    
+    setUpdatedTeam(anotherTeam)    
   }
   const handleChange = (e) => {
     const newestTeam = { ...updatedTeam }

@@ -2,22 +2,28 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const AddPlayer = (props) => {
+  const { players, setPlayers } = props
   const [newPlayer, setNewPlayer] = useState({
     name:``,
     team_Id: props.team_Id
   })
-  const submit = (e) => {
+
+  const submit = async (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:3001/api/players`, {
+    await axios.post(`http://localhost:3001/api/players`, {
       name: newPlayer.name,
       team_Id: newPlayer.team_Id
     })
+    const res = await axios.get(`http://localhost:3001/api/players`)
+    const allPlayers = res.data.players
+    const teamPlayers = allPlayers.filter((player) => {
+      return player.team_Id === props.team_Id
+    })
+    setPlayers(teamPlayers)
     let anotherPlayer = {
       name: ``
     }
     setNewPlayer(anotherPlayer)
-    // DO THIS WITHOUT RELOADING THE WHOLE PAGE:
-    window.location.reload()
   }
   const handleChange = (e) => {
     const newestPlayer = { ...newPlayer }
