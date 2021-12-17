@@ -29,6 +29,7 @@ export default function Home(props) {
         {teams.length === 1 ? (
           <div className="teamBoxesCont">
             <TeamBox
+              {...props}
               teams={teams}
               setTeams={setTeams}
               key={teams[0]._id}
@@ -45,6 +46,7 @@ export default function Home(props) {
         ) : (
           <div className="teamBoxesCont">
             <TeamBox
+              {...props}
               teams={teams}
               setTeams={setTeams}
               key={teams[0]._id}
@@ -53,6 +55,7 @@ export default function Home(props) {
               team_Id={teams[0]._id}
             />
             <TeamBox
+              {...props}
               teams={teams}
               setTeams={setTeams}
               key={teams[1]._id}

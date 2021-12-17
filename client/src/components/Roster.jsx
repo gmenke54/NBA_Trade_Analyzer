@@ -28,6 +28,9 @@ const Roster = (props) => {
               _id={player._id}
               delPlayer={delPlayer}
               players={props.players}
+              onClick={() => 
+                props.history.push(`/players/details/${player.name}`)
+              }
               />
           )
         }

@@ -39,7 +39,7 @@ const PlayerDetails = (props) => {
       </div>
     );
   } else {
-    return <div>Player Not Found</div>;
+    return <div>Finding {props.match.params.name}'s stats...</div>;
   }
 };
 

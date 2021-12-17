@@ -10,7 +10,7 @@ const PlayerCard = (props) => {
 
   return (
     <div className="playerCard">
-      <h3>{props.name}</h3>
+      <h3 onClick={props.onClick}>{props.name}</h3>
       <button onClick={deletePlayer}>DEL</button>
     </div>
   )
