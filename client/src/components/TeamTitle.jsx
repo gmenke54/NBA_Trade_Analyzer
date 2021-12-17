@@ -6,19 +6,20 @@ const TeamTitle = (props) => {
     team_Name:``,
     manager_Name: props.manager_Name
   })
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:3001/api/teams/details/${props.team_Id}`, {
+    await axios.put(`http://localhost:3001/api/teams/details/${props.team_Id}`, {
       team_Name: updatedTeam.team_Name,
       manager_Name: updatedTeam.manager_Name
     })
+    props.updateTeamName(props.team_Id, updatedTeam.team_Name)
     let anotherTeam = {
       team_Name:``,
       manager_Name: props.manager_Name
     }
     setUpdatedTeam(anotherTeam)
-    // DO THIS WITHOUT RELOADING THE WHOLE PAGE:
-    window.location.reload()
+
+    
   }
   const handleChange = (e) => {
     const newestTeam = { ...updatedTeam }
@@ -30,8 +31,6 @@ const TeamTitle = (props) => {
   return (
     <section className="teamBoxTitle">
         <h1>{props.team_Name}</h1>
-        <h3>{props.manager_Name}</h3>
-        <h5>{props.team_Id}</h5>
         <form className="updateTeamForm" onSubmit={(e) => submit(e)}>
         <input 
           type='text' 
@@ -43,6 +42,9 @@ const TeamTitle = (props) => {
         />
         <button className="btn">Update</button>
       </form>
+        <h3>{props.manager_Name}</h3>
+        <h5>{props.team_Id}</h5>
+        
       </section>
   )
 }

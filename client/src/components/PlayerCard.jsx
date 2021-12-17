@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 
 const PlayerCard = (props) => {
-  const deletePlayer = () => {
-    axios.delete(`http://localhost:3001/api/players/details/${props._id}`);
-    // DO THIS WITHOUT RELOADING THE WHOLE PAGE:
-    window.location.reload()
+  
+  const deletePlayer = async () => {
+    await axios.delete(`http://localhost:3001/api/players/details/${props._id}`);
+    props.delPlayer(props._id)
   }
 
   return (

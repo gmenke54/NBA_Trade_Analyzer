@@ -18,6 +18,7 @@ const AddTeam = (props) => {
     }
     setNewTeam(anotherTeam)
     // DO THIS WITHOUT RELOADING THE WHOLE PAGE:
+    // follow the format of the delete function using .push instead of finding and deleting
     window.location.reload()
   }
   const handleChange = (e) => {
