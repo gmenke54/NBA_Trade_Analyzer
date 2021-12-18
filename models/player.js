@@ -7,7 +7,8 @@ const Player = new Schema(
     // rating: { type: Number, required: true },
     // position: { type: String, required: true },
     name: { type: String, required: true },
-    team_Id: { type: Schema.Types.ObjectId, ref: 'teams' }
+    team_Id: { type: Schema.Types.ObjectId, ref: 'teams' },
+    api_Id: { type: Number, required: true }
   },
   { timestamps: true }
 );
