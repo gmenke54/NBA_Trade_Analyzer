@@ -30,8 +30,10 @@ const AddPlayer = (props) => {
   }
 
   const postPlayer = async (nameFromAPI, idFromAPI) => {
+    const res1 = await axios.get(`http://localhost:3001/api/players`)
+    const allPlayers1 = res1.data.players
     let found = false
-    players.map((player) => {
+    allPlayers1.map((player) => {
       if (player.api_Id === idFromAPI){
         found = true
       }
@@ -42,9 +44,9 @@ const AddPlayer = (props) => {
       team_Id: props.team_Id,
       api_Id: idFromAPI
     })
-    const res = await axios.get(`http://localhost:3001/api/players`)
-    const allPlayers = res.data.players
-    const teamPlayers = allPlayers.filter((player) => {
+    const res2 = await axios.get(`http://localhost:3001/api/players`)
+    const allPlayers2 = res2.data.players
+    const teamPlayers = allPlayers2.filter((player) => {
       return player.team_Id === props.team_Id
     })
     setPlayers(teamPlayers)
