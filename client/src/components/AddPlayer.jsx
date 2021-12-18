@@ -71,16 +71,18 @@ const AddPlayer = (props) => {
         <div>
           {searchSug && searchSug !== [] ? (
         <div>
-          {searchSug.map((player) => {
+          {searchSug.map((player, index) => {
             {
-              return (
-                <SugCard 
-                  key={player.id}
-                  fName={player.first_name}
-                  lName={player.last_name}
-                  pos={player.team.abbreviation}
-                />
-              )
+              if (index<10){
+                return (
+                  <SugCard 
+                    key={player.id}
+                    fName={player.first_name}
+                    lName={player.last_name}
+                    pos={player.team.abbreviation}
+                  />
+                )
+              }
             }
           })}
         </div>
@@ -92,27 +94,3 @@ const AddPlayer = (props) => {
 }
 
 export default AddPlayer
-
-
-// ATTEMPT1:
-// {searchSug.map((player) => {
-//   if (player !== undefined){
-//     {
-//       return (
-//         <SugCard 
-//           key={player.id}
-//           fName={player.first_name}
-//           lName={player.last_name}
-//         />
-//       )
-//     }
-//   }
-// })}
-
-// ATTEMPT2:
-// WORKS BUT IS HACKERY
-{/* <div className="searchSug">
-          <div> {searchSug[0].first_name} {searchSug[0].last_name} </div>
-          <div> {searchSug[1].first_name} {searchSug[1].last_name} </div>
-          <div> {searchSug[2].first_name} {searchSug[2].last_name} </div>
-        </div> */}
