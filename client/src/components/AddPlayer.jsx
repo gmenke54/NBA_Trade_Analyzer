@@ -19,27 +19,6 @@ const AddPlayer = (props) => {
     })
     setSearchSug(unsortedArr)
   }
-
-  const submit = async (e) => {
-    e.preventDefault();
-    await axios.post(`http://localhost:3001/api/players`, {
-      name: newPlayer.name,
-      team_Id: newPlayer.team_Id
-    })
-    
-    const res = await axios.get(`http://localhost:3001/api/players`)
-    const allPlayers = res.data.players
-    const teamPlayers = allPlayers.filter((player) => {
-      return player.team_Id === props.team_Id
-    })
-    setPlayers(teamPlayers)
-
-    let anotherPlayer = {
-      name: ``,
-      team_Id: props.team_Id
-    }
-    setNewPlayer(anotherPlayer)
-  }
   const handleChange = (e) => {
     const newestPlayer = { ...newPlayer }
     newestPlayer[e.target.id] = e.target.value
@@ -75,7 +54,6 @@ const AddPlayer = (props) => {
 
   return (
     <div className="addPlayer">
-      <form onSubmit={(e) => submit(e)}>
         <input 
           type='text' 
           name='name' 
@@ -84,8 +62,6 @@ const AddPlayer = (props) => {
           id='name'
           placeholder="enter player name"
         />
-        <button className="btn">Add</button>
-      </form>
       {newPlayer.name.length<4 ? (null) : (
         <div>
           {searchSug && searchSug !== [] ? (
