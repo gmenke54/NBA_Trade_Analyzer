@@ -29,10 +29,11 @@ const AddPlayer = (props) => {
     }
   }
 
-  const postPlayer = async (nameFromAPI) => {
+  const postPlayer = async (nameFromAPI, idFromAPI) => {
     await axios.post(`http://localhost:3001/api/players`, {
+      // _id: idFromAPI,
       name: nameFromAPI,
-      team_Id: props.team_Id
+      team_Id: props.team_Id,
     })
 
     const res = await axios.get(`http://localhost:3001/api/players`)
@@ -68,6 +69,7 @@ const AddPlayer = (props) => {
         <div>
           {searchSug.map((player, index) => {
             const plyName = `${player.first_name} ${player.last_name}`
+            const plyID = player.id
             {
               if (index<10){
                 return (
@@ -76,7 +78,7 @@ const AddPlayer = (props) => {
                     fName={player.first_name}
                     lName={player.last_name}
                     pos={player.team.abbreviation}
-                    onClick={() => postPlayer(plyName)}
+                    onClick={() => postPlayer(plyName, plyID)}
                   />
                 )
               }
@@ -120,14 +122,23 @@ export default AddPlayer
 //     })
 //     setSearchSug(unsortedArr)
 //   }
+//   const handleChange = (e) => {
+//     const newestPlayer = { ...newPlayer }
+//     newestPlayer[e.target.id] = e.target.value
+//     setNewPlayer(newestPlayer)
+//     console.log(newestPlayer)
+//     if (newPlayer.name.length>=3){
+//       searchPlayer()
+//     }
+//   }
 
-//   const submit = async (e) => {
-//     e.preventDefault();
+//   const postPlayer = async (nameFromAPI, idFromAPI) => {
 //     await axios.post(`http://localhost:3001/api/players`, {
-//       name: newPlayer.name,
-//       team_Id: newPlayer.team_Id
+//       // _id: idFromAPI,
+//       name: nameFromAPI,
+//       team_Id: props.team_Id,
 //     })
-    
+
 //     const res = await axios.get(`http://localhost:3001/api/players`)
 //     const allPlayers = res.data.players
 //     const teamPlayers = allPlayers.filter((player) => {
@@ -141,22 +152,12 @@ export default AddPlayer
 //     }
 //     setNewPlayer(anotherPlayer)
 //   }
-//   const handleChange = (e) => {
-//     const newestPlayer = { ...newPlayer }
-//     newestPlayer[e.target.id] = e.target.value
-//     setNewPlayer(newestPlayer)
-//     console.log(newestPlayer)
-//     if (newPlayer.name.length>=3){
-//       searchPlayer()
-//     }
-//   }
 
 //   useEffect(() => {
 //   }, [searchSug])
 
 //   return (
 //     <div className="addPlayer">
-//       <form onSubmit={(e) => submit(e)}>
 //         <input 
 //           type='text' 
 //           name='name' 
@@ -165,13 +166,13 @@ export default AddPlayer
 //           id='name'
 //           placeholder="enter player name"
 //         />
-//         <button className="btn">Add</button>
-//       </form>
 //       {newPlayer.name.length<4 ? (null) : (
 //         <div>
 //           {searchSug && searchSug !== [] ? (
 //         <div>
 //           {searchSug.map((player, index) => {
+//             const plyName = `${player.first_name} ${player.last_name}`
+//             const plyID = player.id
 //             {
 //               if (index<10){
 //                 return (
@@ -180,6 +181,7 @@ export default AddPlayer
 //                     fName={player.first_name}
 //                     lName={player.last_name}
 //                     pos={player.team.abbreviation}
+//                     onClick={() => postPlayer(plyName, plyID)}
 //                   />
 //                 )
 //               }
