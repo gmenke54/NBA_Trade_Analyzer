@@ -18,7 +18,6 @@ const AddPlayer = (props) => {
       return a.id - b.id
     })
     setSearchSug(unsortedArr)
-    // setSearchSug([unsortedArr[0], unsortedArr[1], unsortedArr[2], unsortedArr[3], unsortedArr[4], unsortedArr[5], unsortedArr[6]])
   }
 
   const submit = async (e) => {
