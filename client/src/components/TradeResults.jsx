@@ -1,0 +1,2 @@
+// https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237 <- AXIOS CALL FOR GETTING PLAYERS CURRENT SEASON AVERAGES BY THEIR EXTERNAL API's ID
+// need to make their ID in my DB the same as their ID in the external API
