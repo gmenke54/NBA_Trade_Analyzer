@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import CareerStats from '../components/CareerStats';
 
 const PlayerDetails = (props) => {
   const [ply, setPly] = useState(null);
@@ -18,24 +19,29 @@ const PlayerDetails = (props) => {
   if (ply) {
     return (
       <div>
-        {ply.height_feet ? (
-          <div>
-            <h1>
-              {ply.first_name} {ply.last_name} - {ply.position}
-            </h1>
-            <h3>{ply.team.full_name}</h3>
-            <h4>
-              {ply.height_feet}' {ply.height_inches}" - {ply.weight_pounds}lbs
-            </h4>
-          </div>
-        ) : (
-          <div>
-            <h1>
-              {ply.first_name} {ply.last_name} - {ply.position}
-            </h1>
-            <h3>{ply.team.full_name}</h3>
-          </div>
-        )}
+        <div>
+          {ply.height_feet ? (
+            <div>
+              <h1>
+                {ply.first_name} {ply.last_name} - {ply.position}
+              </h1>
+              <h3>{ply.team.full_name}</h3>
+              <h4>
+                {ply.height_feet}' {ply.height_inches}" - {ply.weight_pounds}lbs
+              </h4>
+            </div>
+          ) : (
+            <div>
+              <h1>
+                {ply.first_name} {ply.last_name} - {ply.position}
+              </h1>
+              <h3>{ply.team.full_name}</h3>
+            </div>
+          )}
+        </div>
+        <div>
+          <CareerStats {...props} id={ply.id} />
+        </div>
       </div>
     );
   } else {
