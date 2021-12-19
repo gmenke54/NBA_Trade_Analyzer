@@ -85,7 +85,7 @@ const AddPlayer = (props) => {
                     key={player.id}
                     fName={player.first_name}
                     lName={player.last_name}
-                    pos={player.team.abbreviation}
+                    team={player.team.abbreviation}
                     onClick={() => postPlayer(plyName, plyID)}
                   />
                 )
