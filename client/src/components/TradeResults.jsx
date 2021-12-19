@@ -4,12 +4,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const TradeResults = (props) => {
-  const [aPlayers, setAPlayers] = useState([])
-  const [bPlayers, setBPlayers] = useState([])
   const [aStats, setAStats] = useState([])
   const [bStats, setBStats] = useState([])
+  const [aPlayers, setAPlayers] = useState([]);
+  const [bPlayers, setBPlayers] = useState([]);
   
-  const getTeams = async () => {
+  const getStats = async () => {
     const resA = await axios.get(`http://localhost:3001/api/players/${props.teamA_id}`)
     const resB = await axios.get(`http://localhost:3001/api/players/${props.teamB_id}`)
     setAPlayers(resA.data.players)
@@ -26,14 +26,14 @@ const TradeResults = (props) => {
   }
 
   // PLAN:
-  // 1. Fix bug with the above api call returning an empty array after refreshing the page (need to load the players prior getting the stats)
+  // 1. Fix bug with the above api call returning an empty array after refreshing the page (it curr works if you comment out then save) (need to load the players prior to getting the stats; may need to refactor players state to be set much higher up in hierarchy and then pass it down to this component)
   // 2. Duplicate the process used to get aStats for bStats
   // 3. Write a new propiertary algorithm that compares bStats to aStats and determines the better trade package
   // 4. conditionally render the better team in the returned div
   // 5. add explanation to the analysis
 
   useEffect(() => {
-    getTeams()
+    getStats()
   }, [props.params])
   
   return (
