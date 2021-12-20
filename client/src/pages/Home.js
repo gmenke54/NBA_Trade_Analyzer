@@ -64,6 +64,7 @@ export default function Home(props) {
                 team_Name={teams[0].team_Name}
                 manager_Name={teams[0].manager_Name}
                 team_Id={teams[0]._id}
+                setRenderResults={setRenderResults}
               />
               <TeamBox
                 {...props}
@@ -73,6 +74,7 @@ export default function Home(props) {
                 team_Name={teams[1].team_Name}
                 manager_Name={teams[1].manager_Name}
                 team_Id={teams[1]._id}
+                setRenderResults={setRenderResults}
               />
             </div>
             {renderResults === true ? (

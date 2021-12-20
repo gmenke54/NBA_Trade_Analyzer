@@ -3,11 +3,13 @@ import PlayerCard from "./PlayerCard";
 import AddPlayer from "./AddPlayer";
 
 const Roster = (props) => {
-  const { setPlayers, players } = props
+  const { setPlayers, players, setRenderResults } = props
   
   const delPlayer = (curPlyId) => {
     setPlayers(players.filter((player) => {
+      setRenderResults(false)
       return player._id !== curPlyId
+
     }))
   }
   
@@ -18,6 +20,7 @@ const Roster = (props) => {
         team_Id={props.team_Id} 
         players={players} 
         setPlayers={setPlayers} 
+        setRenderResults={setRenderResults}
       />
       {players.map((player) => {
         {

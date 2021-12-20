@@ -56,6 +56,8 @@ const AddPlayer = (props) => {
       team_Id: props.team_Id
     }
     setNewPlayer(anotherPlayer)
+    props.setRenderResults(false)
+
   }
 
   useEffect(() => {
