@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import TeamBox from '../components/TeamBox';
 import AddTeam from '../components/AddTeam';
+import TradeResults from '../components/TradeResults';
 
 export default function Home(props) {
   // let history = useHistory();
@@ -14,10 +15,12 @@ export default function Home(props) {
     getTeams();
   }, [renderResults]);
 
-  const getPlayers = async () => {
-    const res = await axios.get(`http://localhost:3001/api/players`);
-    setPlayers(res.data.players);
-    console.log(res.data.players);
+  const analyze = () => {
+    setRenderResults(true);
+  };
+
+  const reload = () => {
+    setRenderResults(false);
   };
 
   const getTeams = async () => {
@@ -43,7 +46,6 @@ export default function Home(props) {
               team_Name={teams[0].team_Name}
               manager_Name={teams[0].manager_Name}
               team_Id={teams[0]._id}
-              players={players}
             />
             <AddTeam
               teams={teams}
@@ -73,14 +75,18 @@ export default function Home(props) {
                 team_Id={teams[1]._id}
               />
             </div>
-            <button onClick={analyze}>Analyze Trade</button>
             {renderResults === true ? (
               <div>
-                <TradeResults
-                  teamA_id={teams[0]._id}
-                  teamB_id={teams[1]._id}
-                  players={players}
-                />
+                <button onClick={reload}>Back</button>
+              </div>
+            ) : (
+              <div>
+                <button onClick={analyze}>Analyze Trade</button>
+              </div>
+            )}
+            {renderResults === true ? (
+              <div>
+                <TradeResults teamA_id={teams[0]._id} teamB_id={teams[1]._id} />
               </div>
             ) : null}
           </div>
