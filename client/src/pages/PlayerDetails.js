@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CareerStats from '../components/CareerStats';
+import PlayerPic from '../components/PlayerPic';
 
 const PlayerDetails = (props) => {
   const [ply, setPly] = useState(null);
@@ -19,6 +20,9 @@ const PlayerDetails = (props) => {
   if (ply) {
     return (
       <div>
+        <div>
+          <PlayerPic first={ply.first_name} last={ply.last_name} />
+        </div>
         <div>
           {ply.height_feet ? (
             <div>
