@@ -13,8 +13,8 @@ const TradeResults = (props) => {
     const resB = await axios.get(`http://localhost:3001/api/players/${props.teamB_id}`)
     setAPlayers(resA.data.players)
     setBPlayers(resB.data.players)
-    console.log(resA.data.players)
-    console.log(resB.data.players)
+    // console.log(resA.data.players)
+    // console.log(resB.data.players)
   }, [props.params])
   
   return (

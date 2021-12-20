@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Analysis from "./Analysis";
 
 const TradeResults = (props) => {
   const { aPlayers, bPlayers } = props
@@ -19,8 +20,8 @@ const TradeResults = (props) => {
       return acc
     }, 'https://www.balldontlie.io/api/v1/season_averages?')
     const res2 = await (axios.get(`${apiCall2}`))
-    console.log(res.data.data)
-    console.log(res2.data.data)
+    // console.log(res.data.data)
+    // console.log(res2.data.data)
     setAStats(res.data.data)
     setBStats(res2.data.data)
   }, [aPlayers, bPlayers])
@@ -28,8 +29,15 @@ const TradeResults = (props) => {
   
   return (
     <div>
-      <h1>Analysis</h1>
-      <h2>TeamA: {props.teamA_id}</h2>
+      {aStats !== [] && bStats !== [] ? (
+        <div>
+        <Analysis aStats={aStats} bStats={bStats} />
+        </div>
+      ) :(
+        <div>
+          Loading Players...
+        </div>
+      )}
     </div>
   )
 }
