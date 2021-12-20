@@ -21,7 +21,7 @@ const PlayerDetails = (props) => {
     return (
       <div>
         <div>
-          <PlayerPic first={ply.first_name} last={ply.last_name} />
+          <PlayerPic {...props} first={ply.first_name} last={ply.last_name} />
         </div>
         <div>
           {ply.height_feet ? (
