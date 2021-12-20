@@ -31,7 +31,7 @@ const TradeResults = (props) => {
     <div>
       {aStats !== [] && bStats !== [] ? (
         <div>
-        <Analysis aStats={aStats} bStats={bStats} />
+        <Analysis aStats={aStats} bStats={bStats} teamA_name={props.teamA_name} teamB_name={props.teamB_name} />
         </div>
       ) :(
         <div>

@@ -70,3 +70,8 @@
 .statsHeader {
   font-weight: bold;
 }
+
+.pointsRow {
+  display: flex;
+  justify-content: space-around;
+}

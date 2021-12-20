@@ -86,7 +86,12 @@ export default function Home(props) {
             )}
             {renderResults === true ? (
               <div>
-                <TradeResults teamA_id={teams[0]._id} teamB_id={teams[1]._id} />
+                <TradeResults
+                  teamA_id={teams[0]._id}
+                  teamB_id={teams[1]._id}
+                  teamA_name={teams[0].team_Name}
+                  teamB_name={teams[1].team_Name}
+                />
               </div>
             ) : null}
           </div>
