@@ -3,18 +3,15 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import TeamBox from '../components/TeamBox';
 import AddTeam from '../components/AddTeam';
-import TradeResults from '../components/TradeResults';
 
 export default function Home(props) {
   // let history = useHistory();
   const [teams, setTeams] = useState([]);
   const [teamsLoaded, setTeamsLoaded] = useState(false);
   const [renderResults, setRenderResults] = useState(false);
-  const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     getTeams();
-    getPlayers();
   }, [renderResults]);
 
   const getPlayers = async () => {
@@ -31,10 +28,6 @@ export default function Home(props) {
     } else {
       setTeamsLoaded(false);
     }
-  };
-
-  const analyze = () => {
-    setRenderResults(true);
   };
 
   if (teamsLoaded === true) {
@@ -69,7 +62,6 @@ export default function Home(props) {
                 team_Name={teams[0].team_Name}
                 manager_Name={teams[0].manager_Name}
                 team_Id={teams[0]._id}
-                players={players}
               />
               <TeamBox
                 {...props}
@@ -79,7 +71,6 @@ export default function Home(props) {
                 team_Name={teams[1].team_Name}
                 manager_Name={teams[1].manager_Name}
                 team_Id={teams[1]._id}
-                players={players}
               />
             </div>
             <button onClick={analyze}>Analyze Trade</button>
