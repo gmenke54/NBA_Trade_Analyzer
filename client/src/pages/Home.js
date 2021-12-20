@@ -10,10 +10,18 @@ export default function Home(props) {
   const [teams, setTeams] = useState([]);
   const [teamsLoaded, setTeamsLoaded] = useState(false);
   const [renderResults, setRenderResults] = useState(false);
+  const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     getTeams();
+    getPlayers();
   }, [renderResults]);
+
+  const getPlayers = async () => {
+    const res = await axios.get(`http://localhost:3001/api/players`);
+    setPlayers(res.data.players);
+    console.log(res.data.players);
+  };
 
   const getTeams = async () => {
     const res = await axios.get(`http://localhost:3001/api/teams`);
@@ -42,6 +50,7 @@ export default function Home(props) {
               team_Name={teams[0].team_Name}
               manager_Name={teams[0].manager_Name}
               team_Id={teams[0]._id}
+              players={players}
             />
             <AddTeam
               teams={teams}
@@ -60,6 +69,7 @@ export default function Home(props) {
                 team_Name={teams[0].team_Name}
                 manager_Name={teams[0].manager_Name}
                 team_Id={teams[0]._id}
+                players={players}
               />
               <TeamBox
                 {...props}
@@ -69,12 +79,17 @@ export default function Home(props) {
                 team_Name={teams[1].team_Name}
                 manager_Name={teams[1].manager_Name}
                 team_Id={teams[1]._id}
+                players={players}
               />
             </div>
             <button onClick={analyze}>Analyze Trade</button>
             {renderResults === true ? (
               <div>
-                <TradeResults teamA_id={teams[0]._id} teamB_id={teams[1]._id} />
+                <TradeResults
+                  teamA_id={teams[0]._id}
+                  teamB_id={teams[1]._id}
+                  players={players}
+                />
               </div>
             ) : null}
           </div>
