@@ -99,3 +99,13 @@
 .rosterPics {
   width: 50px;
 }
+
+.statBtnBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.vStats {
+  margin-bottom: 2px;
+}

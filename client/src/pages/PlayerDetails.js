@@ -27,7 +27,7 @@ const PlayerDetails = (props) => {
           {ply.height_feet ? (
             <div>
               <h1>
-                {ply.first_name} {ply.last_name} - {ply.position}
+                {ply.first_name} {ply.last_name} - {ply.position[0]}
               </h1>
               <h3>{ply.team.full_name}</h3>
               <h4>
@@ -37,7 +37,7 @@ const PlayerDetails = (props) => {
           ) : (
             <div>
               <h1>
-                {ply.first_name} {ply.last_name} - {ply.position}
+                {ply.first_name} {ply.last_name} - {ply.position[0]}
               </h1>
               <h3>{ply.team.full_name}</h3>
             </div>
