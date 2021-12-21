@@ -88,6 +88,11 @@
   color: black;
 }
 
+.blankCard {
+  height: 0px;
+  opacity: 0;
+}
+
 .sugCard:hover {
   background-color: lightgray;
 }
