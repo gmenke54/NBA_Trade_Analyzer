@@ -4,6 +4,8 @@ import anon from '../anon2.png'
 
 const PlayerCard = (props) => {
   const [personId, setPersonId] = useState(null)
+  const [pos, setPos] = useState(null)
+  const [nbaTeam, setNbaTeam] = useState(null)
 
   useEffect( async () => {
     const res = await axios.get(
@@ -14,6 +16,11 @@ const PlayerCard = (props) => {
         setPersonId(`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${player.personId}.png`)
       }
     })
+    const res2 = await axios.get(
+      `https://balldontlie.io/api/v1/players?search=${props.name}`
+    )
+    setNbaTeam(res2.data.data[0].team.abbreviation)
+    setPos(res2.data.data[0].position[0])
   }, [props.players])
 
   const deletePlayer = async () => {
@@ -34,7 +41,18 @@ const PlayerCard = (props) => {
           </div>
         )}
       </div>      
-      <h3 onClick={props.onClick}>{props.name}</h3>
+      {/* <h3 onClick={props.onClick}>{props.name}</h3> */}
+      <div>
+        {pos ? (
+          <div>
+            <h3 onClick={props.onClick}>{props.name} {nbaTeam} - {pos}</h3>
+          </div>
+        ) : (
+          <div>
+            Loading Data...
+          </div>
+        )}
+      </div>
       <button onClick={deletePlayer}>DEL</button>
     </div>
   )
