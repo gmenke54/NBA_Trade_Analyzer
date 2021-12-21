@@ -13,7 +13,7 @@ export default function Home(props) {
   const [pts, setPts] = useState('true');
   const [fgp, setFgp] = useState('true');
   const [ftp, setFtp] = useState('true');
-  const [ftm, setFtm] = useState('true');
+  const [ftm, setFtm] = useState('false');
   const [fg3m, setFg3m] = useState('true');
   const [reb, setReb] = useState('true');
   const [ast, setAst] = useState('true');
@@ -87,6 +87,7 @@ export default function Home(props) {
               team_Name={teams[0].team_Name}
               manager_Name={teams[0].manager_Name}
               team_Id={teams[0]._id}
+              displayTitle={false}
             />
             <AddTeam
               teams={teams}
@@ -106,6 +107,7 @@ export default function Home(props) {
                 manager_Name={teams[0].manager_Name}
                 team_Id={teams[0]._id}
                 setRenderResults={setRenderResults}
+                displayTitle={false}
               />
               <TeamBox
                 {...props}
@@ -116,6 +118,7 @@ export default function Home(props) {
                 manager_Name={teams[1].manager_Name}
                 team_Id={teams[1]._id}
                 setRenderResults={setRenderResults}
+                displayTitle={false}
               />
             </div>
             {renderResults === true ? (
@@ -149,11 +152,11 @@ export default function Home(props) {
                   <button className={blk} onClick={puntBlk}>
                     BLK
                   </button>
-                  <button className={ftm} onClick={puntFtm}>
-                    FTM
-                  </button>
                   <button className={turnOver} onClick={puntTurnOver}>
                     TO
+                  </button>
+                  <button className={ftm} onClick={puntFtm}>
+                    FTM
                   </button>
                 </div>
                 <button onClick={analyze}>Analyze Trade</button>

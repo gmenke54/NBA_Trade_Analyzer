@@ -34,7 +34,7 @@ const TeamBox = (props) => {
 
   return (
     <div>
-      <TeamTitle updateTeamName={updateTeamName} team_Name={props.team_Name} manager_Name={props.manager_Name} team_Id={props.team_Id} />
+      <TeamTitle updateTeamName={updateTeamName} team_Name={props.team_Name} manager_Name={props.manager_Name} team_Id={props.team_Id} displayTitle={props.displayTitle} />
       <Roster {...props} team_Id={props.team_Id} players={players} setPlayers={setPlayers} setRenderResults={props.setRenderResults} />
     </div>
   )

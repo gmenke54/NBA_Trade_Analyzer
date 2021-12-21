@@ -71,7 +71,7 @@ const AddPlayer = (props) => {
           value={newPlayer.name} 
           onChange={(e) => handleChange(e)}
           id='name'
-          placeholder="enter player name"
+          placeholder="add a player"
           autoComplete="off"
         />
       {newPlayer.name.length<4 ? (null) : (

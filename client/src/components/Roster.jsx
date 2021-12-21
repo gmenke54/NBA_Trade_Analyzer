@@ -15,7 +15,6 @@ const Roster = (props) => {
   
   return (
     <div className="roster">
-      {/* <h2>Players:</h2> */}
       <AddPlayer 
         team_Id={props.team_Id} 
         players={players} 
@@ -32,7 +31,7 @@ const Roster = (props) => {
               delPlayer={delPlayer}
               players={props.players}
               onClick={() => 
-                props.history.push(`/players/details/${player.name}`)
+                props.history.push(`players/details/${player.name}`)
               }
               />
           )

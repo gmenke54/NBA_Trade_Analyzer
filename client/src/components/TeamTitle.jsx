@@ -27,22 +27,30 @@ const TeamTitle = (props) => {
   }
 
   return (
-    <section className="teamBoxTitle">
-        <h1>{props.team_Name}</h1>
-        <form className="updateTeamForm" onSubmit={(e) => submit(e)}>
-        <input 
-          type='text' 
-          name='team_Name' 
-          value={updatedTeam.team_Name} 
-          onChange={(e) => handleChange(e)}
-          id='team_Name'
-          placeholder="update team name"
-        />
-        <button className="btn">Update</button>
-      </form>
-        <h3>Manager: {props.manager_Name}</h3>
-        {/* <h5>{props.team_Id}</h5> */}
-      </section>
+    <div>
+      {props.displayTitle===true ? (
+        <section className="teamBoxTitle">
+            <h1>{props.team_Name}</h1>
+          <form className="updateTeamForm" onSubmit={(e) => submit(e)}>
+            <input 
+              type='text' 
+              name='team_Name' 
+              value={updatedTeam.team_Name} 
+              onChange={(e) => handleChange(e)}
+              id='team_Name'
+              placeholder="update team name"
+            />
+            <button className="btn">Update</button>
+          </form>
+            <h3>Manager: {props.manager_Name}</h3>
+        </section>
+      ) : (
+        <section className="teamBoxTitle">
+          <h1>{props.team_Name}</h1>
+        </section>
+      )}
+    </div>
+
   )
 }
 
