@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PlayerCard from "./PlayerCard";
 import SeasonCard from "./SeasonCard";
 
 const CareerStats = (props) => {
@@ -45,7 +44,7 @@ const CareerStats = (props) => {
       <h3 className="vStats">View Stats</h3>
       <div className="statBtnBar">
         <button className="btn" onClick={togRenderCurStats}>Current</button>
-        <button className="btn" onClick={togRenderRecStats}>Last 3 Yrs</button>
+        <button className="btn" onClick={togRenderRecStats}>Recent</button>
         <button className="btn" onClick={togRenderStats}>Career</button>
       </div>
       <div>

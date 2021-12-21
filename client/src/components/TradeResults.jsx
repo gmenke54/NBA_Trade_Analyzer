@@ -9,8 +9,12 @@ const TradeResults = (props) => {
 
   useEffect( async () => {
     // getTeams()
-    const resA = await axios.get(`http://localhost:3001/api/players/${props.teamA_id}`)
-    const resB = await axios.get(`http://localhost:3001/api/players/${props.teamB_id}`)
+    const resA = await axios.get(
+      `http://localhost:3001/api/players/${props.teamA_id}`
+    )
+    const resB = await axios.get(
+      `http://localhost:3001/api/players/${props.teamB_id}`
+    )
     setAPlayers(resA.data.players)
     setBPlayers(resB.data.players)
     // console.log(resA.data.players)
@@ -21,7 +25,22 @@ const TradeResults = (props) => {
     <div>
       {aPlayers !== [] && bPlayers !== [] ? (
         <div>
-        <ResultsCard aPlayers={aPlayers} bPlayers={bPlayers} teamA_name={props.teamA_name} teamB_name={props.teamB_name} />
+        <ResultsCard 
+          aPlayers={aPlayers} 
+          bPlayers={bPlayers} 
+          teamA_name={props.teamA_name} 
+          teamB_name={props.teamB_name}
+          pts={props.pts}
+          fgp={props.fgp}
+          ftp={props.ftp}
+          fg3m={props.fg3m}
+          reb={props.reb}
+          ast={props.ast}
+          st={props.st}
+          blk={props.blk}
+          ftm={props.ftm}
+          turnOver={props.turnOver}
+        />
         </div>
       ) :(
         <div>

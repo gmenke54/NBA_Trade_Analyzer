@@ -1,16 +1,48 @@
 import React, { useEffect, useState } from "react";
 
 const Analysis = (props) => {
-  const { aStats, bStats } = props
+  const { aStats, bStats, pts, fgp, ftp, fg3m, reb, ast, st, blk, ftm, turnOver } = props
   const [betterTeam, setBetterTeam] = useState(null)
   const [complete, setComplete] = useState(false)
   const [aValue, setAValue] = useState(null)
   const [bValue, setBValue] = useState(null)
 
   const compareTeams = () => {
-    const aPointsArr = aStats.map((ply) => {
-      return ((ply.pts/30.1) + (ply.reb/22.9) + (ply.blk/3.5) + (ply.stl/2.7) + (ply.fg3m/3.8) + (ply.ast/11.2) + (ply.fg_pct/0.674) + (ply.ft_pct/0.908))
+    let aPointsArr = aStats.map((ply) => {
+      let plyTot= ((ply.pts/30.1) + (ply.reb/22.9) + (ply.blk/3.5) + (ply.stl/2.7) + (ply.fg3m/3.8) + (ply.ast/11.2) + (ply.fg_pct/0.674) + (ply.ft_pct/0.908) + (ply.ftm/7.8) - (ply.turnover/4.1))
+      if (pts === 'false'){
+        plyTot -= (ply.pts/30.1)
+      }
+      if (reb === 'false'){
+        plyTot -= (ply.reb/22.9)
+      }
+      if (blk === 'false'){
+        plyTot -= (ply.blk/3.5)
+      }
+      if (st === 'false'){
+        plyTot -= (ply.stl/2.7)
+      }
+      if (fg3m === 'false'){
+        plyTot -= (ply.fg3m/3.8)
+      }
+      if (ast === 'false'){
+        plyTot -= (ply.ast/11.2)
+      }
+      if (fgp === 'false'){
+        plyTot -= (ply.fg_pct/0.674)
+      }
+      if (ftp === 'false'){
+        plyTot -= (ply.ft_pct/0.908)
+      }
+      if (ftm === 'false'){
+        plyTot -= (ply.ftm/7.8)
+      }
+      if (turnOver === 'false'){
+        plyTot += (ply.turnover/4.1)
+      }
+      return plyTot
     })
+
     console.log(aPointsArr)
     const aPoints = aPointsArr.reduce((num, acc) => {
       acc += num
@@ -18,8 +50,39 @@ const Analysis = (props) => {
     }, 0)
     console.log(aPoints)
     
-    const bPointsArr = bStats.map((ply) => {
-      return ((ply.pts/30.1) + (ply.reb/22.9) + (ply.blk/3.5) + (ply.stl/2.7) + (ply.fg3m/3.8) + (ply.ast/11.2) + (ply.fg_pct/0.674) + (ply.ft_pct/0.908))
+    let bPointsArr = bStats.map((ply) => {
+      let plyTot= ((ply.pts/30.1) + (ply.reb/22.9) + (ply.blk/3.5) + (ply.stl/2.7) + (ply.fg3m/3.8) + (ply.ast/11.2) + (ply.fg_pct/0.674) + (ply.ft_pct/0.908) + (ply.ftm/7.8) - (ply.turnover/4.1))
+      if (pts === 'false'){
+        plyTot -= (ply.pts/30.1)
+      }
+      if (reb === 'false'){
+        plyTot -= (ply.reb/22.9)
+      }
+      if (blk === 'false'){
+        plyTot -= (ply.blk/3.5)
+      }
+      if (st === 'false'){
+        plyTot -= (ply.stl/2.7)
+      }
+      if (fg3m === 'false'){
+        plyTot -= (ply.fg3m/3.8)
+      }
+      if (ast === 'false'){
+        plyTot -= (ply.ast/11.2)
+      }
+      if (fgp === 'false'){
+        plyTot -= (ply.fg_pct/0.674)
+      }
+      if (ftp === 'false'){
+        plyTot -= (ply.ft_pct/0.908)
+      }
+      if (ftm === 'false'){
+        plyTot -= (ply.ftm/7.8)
+      }
+      if (turnOver === 'false'){
+        plyTot += (ply.turnover/4.1)
+      }
+      return plyTot
     })
     const bPoints = bPointsArr.reduce((num, acc) => {
       acc += num
@@ -39,7 +102,7 @@ const Analysis = (props) => {
     }
     console.log(aVal, bVal)
     aVal > bVal ? (setBetterTeam(props.teamA_name)) : (setBetterTeam(props.teamB_name))
-    if (bVal > 0){
+    if (bVal !== 0){
       setComplete(true)
       setAValue(aVal*10)
       setBValue(bVal*10)

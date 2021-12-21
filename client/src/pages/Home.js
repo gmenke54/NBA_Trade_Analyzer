@@ -10,6 +10,47 @@ export default function Home(props) {
   const [teams, setTeams] = useState([]);
   const [teamsLoaded, setTeamsLoaded] = useState(false);
   const [renderResults, setRenderResults] = useState(false);
+  const [pts, setPts] = useState('true');
+  const [fgp, setFgp] = useState('true');
+  const [ftp, setFtp] = useState('true');
+  const [ftm, setFtm] = useState('true');
+  const [fg3m, setFg3m] = useState('true');
+  const [reb, setReb] = useState('true');
+  const [ast, setAst] = useState('true');
+  const [st, setSt] = useState('true');
+  const [blk, setBlk] = useState('true');
+  const [turnOver, setTurnOver] = useState('true');
+
+  const puntPts = () => {
+    pts === 'true' ? setPts('false') : setPts('true');
+  };
+  const puntFgp = () => {
+    fgp === 'true' ? setFgp('false') : setFgp('true');
+  };
+  const puntFtp = () => {
+    ftp === 'true' ? setFtp('false') : setFtp('true');
+  };
+  const puntFg3m = () => {
+    fg3m === 'true' ? setFg3m('false') : setFg3m('true');
+  };
+  const puntReb = () => {
+    reb === 'true' ? setReb('false') : setReb('true');
+  };
+  const puntAst = () => {
+    ast === 'true' ? setAst('false') : setAst('true');
+  };
+  const puntSt = () => {
+    st === 'true' ? setSt('false') : setSt('true');
+  };
+  const puntBlk = () => {
+    blk === 'true' ? setBlk('false') : setBlk('true');
+  };
+  const puntFtm = () => {
+    ftm === 'true' ? setFtm('false') : setFtm('true');
+  };
+  const puntTurnOver = () => {
+    turnOver === 'true' ? setTurnOver('false') : setTurnOver('true');
+  };
 
   useEffect(() => {
     getTeams();
@@ -83,6 +124,38 @@ export default function Home(props) {
               </div>
             ) : (
               <div>
+                <div className="catBtnBar">
+                  <button className={pts} onClick={puntPts}>
+                    PTS
+                  </button>
+                  <button className={fgp} onClick={puntFgp}>
+                    FG%
+                  </button>
+                  <button className={ftp} onClick={puntFtp}>
+                    FT%
+                  </button>
+                  <button className={fg3m} onClick={puntFg3m}>
+                    3PTM
+                  </button>
+                  <button className={reb} onClick={puntReb}>
+                    REB
+                  </button>
+                  <button className={ast} onClick={puntAst}>
+                    AST
+                  </button>
+                  <button className={st} onClick={puntSt}>
+                    STL
+                  </button>
+                  <button className={blk} onClick={puntBlk}>
+                    BLK
+                  </button>
+                  <button className={ftm} onClick={puntFtm}>
+                    FTM
+                  </button>
+                  <button className={turnOver} onClick={puntTurnOver}>
+                    TO
+                  </button>
+                </div>
                 <button onClick={analyze}>Analyze Trade</button>
               </div>
             )}
@@ -93,6 +166,16 @@ export default function Home(props) {
                   teamB_id={teams[1]._id}
                   teamA_name={teams[0].team_Name}
                   teamB_name={teams[1].team_Name}
+                  pts={pts}
+                  fgp={fgp}
+                  ftp={ftp}
+                  fg3m={fg3m}
+                  reb={reb}
+                  ast={ast}
+                  st={st}
+                  blk={blk}
+                  ftm={ftm}
+                  turnOver={turnOver}
                 />
               </div>
             ) : null}

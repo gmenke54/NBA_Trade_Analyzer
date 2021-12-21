@@ -20,11 +20,11 @@ const PlayerPic = (props) => {
     <div>
       {personId ? (
         <div>
-        <img src={personId} />
+        <img className="detPic" src={personId} />
         </div>
       ) : (
         <div>
-          <img src={anon} />
+          <img className="detPic" src={anon} />
         </div>
       )}
     </div>

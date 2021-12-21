@@ -109,3 +109,16 @@
 .vStats {
   margin-bottom: 2px;
 }
+
+.detPic {
+  width: 260px;
+  height: 190px;
+}
+
+.false {
+  opacity: 50%;
+}
+
+.true {
+  opacity: 100%;
+}
