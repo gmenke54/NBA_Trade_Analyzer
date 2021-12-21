@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
+import anon from '../anon2.png'
 
 const PlayerPic = (props) => {
   const [personId, setPersonId] = useState(null)
@@ -10,7 +11,6 @@ const PlayerPic = (props) => {
     )
     res.data.league.standard.map((player) => {
       if (props.last === player.lastName && props.first === player.firstName){
-        setPersonId(player.personId)
         setPersonId(`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${player.personId}.png`)
       }
     })
@@ -24,7 +24,7 @@ const PlayerPic = (props) => {
         </div>
       ) : (
         <div>
-          Loading Pictures...
+          <img src={anon} />
         </div>
       )}
     </div>

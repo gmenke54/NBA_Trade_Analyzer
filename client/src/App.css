@@ -85,3 +85,7 @@
 .sugCard:hover {
   background-color: lightgray;
 }
+
+.rosterPics {
+  width: 50px;
+}

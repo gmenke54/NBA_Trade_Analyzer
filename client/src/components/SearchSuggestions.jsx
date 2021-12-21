@@ -27,36 +27,6 @@ const SearchSuggestions = (props) => {
     }
   }
 
-  // const postPlayer = async (nameFromAPI, idFromAPI) => {
-  //   const res1 = await axios.get(`http://localhost:3001/api/players`)
-  //   const allPlayers1 = res1.data.players
-  //   let found = false
-  //   allPlayers1.map((player) => {
-  //     if (player.api_Id === idFromAPI){
-  //       found = true
-  //     }
-  //   })
-  //   if (found === false){
-  //     await axios.post(`http://localhost:3001/api/players`, {
-  //     name: nameFromAPI,
-  //     team_Id: props.team_Id,
-  //     api_Id: idFromAPI
-  //   })
-  //   const res2 = await axios.get(`http://localhost:3001/api/players`)
-  //   const allPlayers2 = res2.data.players
-  //   const teamPlayers = allPlayers2.filter((player) => {
-  //     return player.team_Id === props.team_Id
-  //   })
-  //   setPlayers(teamPlayers)
-  //   }
-  //   let anotherPlayer = {
-  //     name: ``,
-  //     team_Id: props.team_Id
-  //   }
-  //   setNewPlayer(anotherPlayer)
-  //   props.setRenderResults(false)
-  // }
-
   useEffect(() => {
   }, [searchSug])
 
@@ -86,7 +56,6 @@ const SearchSuggestions = (props) => {
                         lName={player.last_name}
                         team={player.team.abbreviation}
                         onClick={() => window.location.href=`http://localhost:3000/players/details/${plyName}`}
-                        // onClick={() => props.history.push(`/players/details/${plyName}`)}
                       />
                     )
                   }
