@@ -1,45 +1,33 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import anon from '../anon2.png'
+import SugCardDisp from "./SugCardDisp";
 
 const SugCard = (props) => {
-  const [personId, setPersonId] = useState(null)
-  const [showCard, setShowCard] = useState(true)
+  const [curPlayers, setCurPlayers] = useState(null)
 
   useEffect( async () => {
     const res = await axios.get(
       `http://data.nba.net/data/10s/prod/v1/2021/players.json`
     )
-    res.data.league.standard.map((player) => {
-      if (props.lName === player.lastName && props.fName === player.firstName){
-        setPersonId(`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${player.personId}.png`)
-      } 
-    })
-    // if (personId===null){
-    //   setShowCard(false)
-    // }
+    setCurPlayers(res.data.league.standard)
   }, [props.params])
 
   return (
     <div>
-      {showCard === true ? (
-              <div className='sugCard' onClick={props.onClick}>
-              <div>
-                {personId ? (
-                  <div>
-                  <img className="sugPics" src={personId} />
-                  </div>
-                ) : (
-                  <div>
-                    <img className="sugPics" src={anon} />
-                  </div>
-                )}
-              </div>      
-              <h5>{props.fName} {props.lName} - {props.team}</h5>
-            </div>
+      {curPlayers ? (
+        <div>
+          <SugCardDisp 
+            fName={props.fName}
+            lName={props.lName}
+            team={props.team}
+            onClick={props.onClick}
+            curPlayers={curPlayers}
+          />
+        </div>
       ) : (
         null
       )}
+        
     </div>
     
   )
