@@ -40,9 +40,8 @@ const TeamTitle = (props) => {
         />
         <button className="btn">Update</button>
       </form>
-        <h3>{props.manager_Name}</h3>
-        <h5>{props.team_Id}</h5>
-        
+        <h3>Manager: {props.manager_Name}</h3>
+        {/* <h5>{props.team_Id}</h5> */}
       </section>
   )
 }

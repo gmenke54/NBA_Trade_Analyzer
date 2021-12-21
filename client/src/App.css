@@ -82,8 +82,18 @@
   opacity: 100%;
 }
 
+.sugCard {
+  display: flex;
+  font-size: medium;
+  color: black;
+}
+
 .sugCard:hover {
   background-color: lightgray;
+}
+
+.sugPics {
+  width: 50px;
 }
 
 .rosterPics {

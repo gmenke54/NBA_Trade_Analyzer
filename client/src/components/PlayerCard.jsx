@@ -40,8 +40,7 @@ const PlayerCard = (props) => {
             <img className="rosterPics" src={anon} />
           </div>
         )}
-      </div>      
-      {/* <h3 onClick={props.onClick}>{props.name}</h3> */}
+      </div>
       <div>
         {pos ? (
           <div>
