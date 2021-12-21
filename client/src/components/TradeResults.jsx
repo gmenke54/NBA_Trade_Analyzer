@@ -39,7 +39,7 @@ const TradeResults = (props) => {
           turnOver={props.turnOver}
         />
         </div>
-      ) :(
+      ) : (
         <div>
           Loading Players...
         </div>
