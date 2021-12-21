@@ -39,6 +39,7 @@ const SearchSuggestions = (props) => {
           onChange={(e) => handleChange(e)}
           id='name'
           placeholder="find a player"
+          autoComplete="off"
         />
       {newPlayer.name.length<4 ? (null) : (
         <div>
