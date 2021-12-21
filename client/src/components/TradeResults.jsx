@@ -8,7 +8,6 @@ const TradeResults = (props) => {
   const [bPlayers, setBPlayers] = useState([])
 
   useEffect( async () => {
-    // getTeams()
     const resA = await axios.get(
       `http://localhost:3001/api/players/${props.teamA_id}`
     )
@@ -17,8 +16,6 @@ const TradeResults = (props) => {
     )
     setAPlayers(resA.data.players)
     setBPlayers(resB.data.players)
-    // console.log(resA.data.players)
-    // console.log(resB.data.players)
   }, [props.params])
   
   return (

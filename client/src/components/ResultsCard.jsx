@@ -20,8 +20,6 @@ const TradeResults = (props) => {
       return acc
     }, 'https://www.balldontlie.io/api/v1/season_averages?')
     const res2 = await (axios.get(`${apiCall2}`))
-    // console.log(res.data.data)
-    // console.log(res2.data.data)
     setAStats(res.data.data)
     setBStats(res2.data.data)
   }, [aPlayers, bPlayers])

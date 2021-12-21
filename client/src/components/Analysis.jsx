@@ -118,7 +118,7 @@ const Analysis = (props) => {
     <div>
       {complete === true ? (
         <div>
-          <h2>{betterTeam} is the better team </h2>
+          <h2>{betterTeam} is the better trade package </h2>
           <section className="pointsRow">
             <div>
               <h4>
