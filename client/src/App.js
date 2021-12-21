@@ -7,12 +7,12 @@ import Nav from './components/Nav';
 import About from './pages/About';
 import PlayerDetails from './pages/PlayerDetails';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Nav />
+        <Nav {...props} />
       </header>
       <Switch>
         <Route exact path="/" component={(props) => <Home {...props} />} />

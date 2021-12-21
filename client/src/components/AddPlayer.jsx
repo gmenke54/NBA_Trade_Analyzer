@@ -76,25 +76,25 @@ const AddPlayer = (props) => {
       {newPlayer.name.length<4 ? (null) : (
         <div>
           {searchSug && searchSug !== [] ? (
-        <div>
-          {searchSug.map((player, index) => {
-            const plyName = `${player.first_name} ${player.last_name}`
-            const plyID = player.id
-            {
-              if (index<10){
-                return (
-                  <SugCard 
-                    key={player.id}
-                    fName={player.first_name}
-                    lName={player.last_name}
-                    team={player.team.abbreviation}
-                    onClick={() => postPlayer(plyName, plyID)}
-                  />
-                )
-              }
-            }
-          })}
-        </div>
+            <div className="searchSugs">
+              {searchSug.map((player, index) => {
+                const plyName = `${player.first_name} ${player.last_name}`
+                const plyID = player.id
+                {
+                  if (index<10){
+                    return (
+                      <SugCard 
+                        key={player.id}
+                        fName={player.first_name}
+                        lName={player.last_name}
+                        team={player.team.abbreviation}
+                        onClick={() => postPlayer(plyName, plyID)}
+                      />
+                    )
+                  }
+                }
+              })}
+            </div>
         ) : (null) }
         </div>
       )}

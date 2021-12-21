@@ -75,3 +75,13 @@
   display: flex;
   justify-content: space-around;
 }
+
+.searchSugs {
+  position: absolute;
+  background-color: rgb(200, 225, 236, 0.9);
+  opacity: 100%;
+}
+
+.sugCard:hover {
+  background-color: lightgray;
+}
