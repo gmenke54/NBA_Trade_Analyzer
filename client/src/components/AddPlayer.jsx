@@ -82,7 +82,7 @@ const AddPlayer = (props) => {
                 const plyName = `${player.first_name} ${player.last_name}`
                 const plyID = player.id
                 {
-                  if (index<10){
+                  if (index<20){
                     return (
                       <SugCard 
                         key={player.id}

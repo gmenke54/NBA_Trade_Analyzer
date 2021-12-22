@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import TeamBox from '../components/TeamBox';
 import AddTeam from '../components/AddTeam';
 import TradeResults from '../components/TradeResults';
+import '../css/Home.css';
 
 export default function Home(props) {
   // let history = useHistory();
@@ -96,7 +97,7 @@ export default function Home(props) {
             />
           </div>
         ) : (
-          <div>
+          <div className="body">
             <div className="teamBoxesCont">
               <TeamBox
                 {...props}
@@ -126,7 +127,7 @@ export default function Home(props) {
                 <button onClick={reload}>Back</button>
               </div>
             ) : (
-              <div>
+              <div className="trade-sec">
                 <div className="catBtnBar">
                   <button className={pts} onClick={puntPts}>
                     PTS
@@ -163,7 +164,7 @@ export default function Home(props) {
               </div>
             )}
             {renderResults === true ? (
-              <div>
+              <div className="res-cont">
                 <TradeResults
                   teamA_id={teams[0]._id}
                   teamB_id={teams[1]._id}

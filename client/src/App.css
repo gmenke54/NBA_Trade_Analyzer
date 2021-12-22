@@ -1,12 +1,15 @@
 .App {
   text-align: center;
+  font-family: Josefin, sans-serif;
+  height: 100vh;
+  background-color: #121212;
+  color: rgba(255, 255, 255, 0.87);
 }
 
-.teamBoxesCont {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+/* h1 h2 h3 h4 h5 h6 {
+  padding: 0;
+  margin: 0;
+} */
 
 .addTeamForm {
   display: flex;
@@ -18,6 +21,36 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.65);
+  border-top: 1px solid rgb(44, 44, 44);
+  border-bottom: 1px solid rgb(44, 44, 44);
+}
+.playerCard:hover {
+  background-color: #313131;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.pos {
+  border: 2px solid #03dac5;
+  padding: 2.8px 5.6px 2px 5.6px;
+  border-radius: 100px;
+  color: #03dac5;
+  font-size: 17px;
+}
+
+.delBtn {
+  padding: 2px 15px 2px 15px;
+  background-color: #03dac5;
+  color: rgb(44, 44, 44);
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.delBtn:hover {
+  background-color: #cf6679;
 }
 
 .searchSug {
@@ -61,7 +94,7 @@
 }
 
 .rosterPics {
-  width: 50px;
+  width: 75px;
 }
 
 .statBtnBar {

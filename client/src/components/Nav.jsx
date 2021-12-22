@@ -11,14 +11,14 @@ function Nav(props) {
         <img src={logo} className="App-logo" alt="logo" />
       </a>
       <div className='linksBar'>
-      <div>
+        <div>
           <SearchSuggestions {...props} />
         </div>
-        <div className='link'>
-          <Link to="/trade" style={{ textDecoration: 'none', color: 'white', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>Trade</Link>
+        <div className='link trade-link'>
+          <Link to="/trade" style={{ textDecoration: 'none', color: 'rgba(255, 255, 255, 0.87)', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>Trade</Link>
         </div>
         <div className='link'>
-          <Link to="/about" style={{ textDecoration: 'none', color: 'white', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>About</Link>
+          <Link to="/about" style={{ textDecoration: 'none', color: 'rgba(255, 255, 255, 0.87)', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>About</Link>
         </div>
       </div>
     </nav>

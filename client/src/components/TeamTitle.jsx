@@ -30,7 +30,7 @@ const TeamTitle = (props) => {
     <div>
       {props.displayTitle===true ? (
         <section className="teamBoxTitle">
-            <h1>{props.team_Name}</h1>
+            <div className="teamName">{props.team_Name}</div>
           <form className="updateTeamForm" onSubmit={(e) => submit(e)}>
             <input 
               type='text' 
@@ -46,7 +46,7 @@ const TeamTitle = (props) => {
         </section>
       ) : (
         <section className="teamBoxTitle">
-          <h1>{props.team_Name}</h1>
+          <div className="teamName">{props.team_Name}</div>
         </section>
       )}
     </div>

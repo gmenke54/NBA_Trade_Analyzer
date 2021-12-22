@@ -1,0 +1,10 @@
+.teamBoxesCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 40vh;
+}
+
+.body {
+  width: 100vw;
+}

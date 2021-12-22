@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Roster from "./Roster";
+import '../css/TeamBox.css'
 
 
 import TeamTitle from "./TeamTitle";
@@ -33,7 +34,7 @@ const TeamBox = (props) => {
   }
 
   return (
-    <div>
+    <div className="teamBox">
       <TeamTitle updateTeamName={updateTeamName} team_Name={props.team_Name} manager_Name={props.manager_Name} team_Id={props.team_Id} displayTitle={props.displayTitle} />
       <Roster {...props} team_Id={props.team_Id} players={players} setPlayers={setPlayers} setRenderResults={props.setRenderResults} />
     </div>

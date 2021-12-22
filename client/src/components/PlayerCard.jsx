@@ -31,6 +31,17 @@ const PlayerCard = (props) => {
   return (
     <div className="playerCard">
       <div>
+        {pos ? (
+          <div>
+            <div className="pos">{pos}</div>
+          </div>
+        ) : (
+          <div>
+            Loading Data...
+          </div>
+        )}
+      </div>
+      <div>
         {personId ? (
           <div>
           <img className="rosterPics" src={personId} />
@@ -52,7 +63,8 @@ const PlayerCard = (props) => {
           </div>
         )}
       </div>
-      <button onClick={deletePlayer}>DEL</button>
+      <div className="delBtn" onClick={deletePlayer}>-</div>
+      {/* <button onClick={deletePlayer}>DEL</button> */}
     </div>
   )
 }
