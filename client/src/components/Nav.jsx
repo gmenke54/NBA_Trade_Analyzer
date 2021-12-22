@@ -1,13 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchSuggestions from './SearchSuggestions';
+import logo from '../bball.png'
+import '../css/Nav.css'
 
 function Nav(props) {
   return (
     <nav className="navBar">
-      <Link to="/trade" style={{ textDecoration: 'none', color: 'white', fontFamily: 'Copperplate, Papyrus, fantasy' }}>Trade</Link>
-      <Link to="/about" style={{ textDecoration: 'none', color: 'white', fontFamily: 'Copperplate, Papyrus, fantasy' }}>About</Link>
-      <SearchSuggestions {...props} />
+      <a href="http://localhost:3000/">
+        <img src={logo} className="App-logo" alt="logo" />
+      </a>
+      <div className='linksBar'>
+      <div>
+          <SearchSuggestions {...props} />
+        </div>
+        <div className='link'>
+          <Link to="/trade" style={{ textDecoration: 'none', color: 'white', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>Trade</Link>
+        </div>
+        <div className='link'>
+          <Link to="/about" style={{ textDecoration: 'none', color: 'white', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>About</Link>
+        </div>
+      </div>
     </nav>
   );
 }

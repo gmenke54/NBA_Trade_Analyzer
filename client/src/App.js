@@ -1,4 +1,3 @@
-import logo from './bball.png';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import React from 'react';
@@ -11,12 +10,7 @@ import MyTeam from './pages/MyTeam';
 function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <a href="http://localhost:3000/">
-          <img src={logo} className="App-logo" alt="logo" />
-        </a>
-        <Nav {...props} />
-      </header>
+      <Nav {...props} />
       <Switch>
         <Route exact path="/" component={(props) => <MyTeam {...props} />} />
         <Route exact path="/trade" component={(props) => <Home {...props} />} />

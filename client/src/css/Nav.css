@@ -1,0 +1,60 @@
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background: linear-gradient(-45deg, #001350, #415a9f, #4c75b3, #000f3f);
+  background-size: 250% 250%;
+  animation: gradient 20s ease infinite;
+  height: 74px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.linksBar {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  padding: 2px 15px 0 15px;
+}
+
+.App-logo {
+  height: 60px;
+  pointer-events: none;
+  padding: 5px;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addPlayer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#name {
+  margin-right: 10px;
+  margin-left: 10px;
+}
