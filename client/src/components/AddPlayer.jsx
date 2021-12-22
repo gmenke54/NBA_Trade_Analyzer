@@ -3,7 +3,7 @@ import axios from "axios";
 import SugCard from "./SugCard";
 
 const AddPlayer = (props) => {
-  const { players, setPlayers } = props
+  const { players, setPlayers, togAddPlayer, setRenderAddPlayer } = props
   const [newPlayer, setNewPlayer] = useState({
     name:``,
     team_Id: props.team_Id
@@ -30,6 +30,7 @@ const AddPlayer = (props) => {
   }
 
   const postPlayer = async (nameFromAPI, idFromAPI) => {
+    setRenderAddPlayer(false)
     const res1 = await axios.get(`http://localhost:3001/api/players`)
     const allPlayers1 = res1.data.players
     let found = false
@@ -57,7 +58,6 @@ const AddPlayer = (props) => {
     }
     setNewPlayer(anotherPlayer)
     props.setRenderResults(false)
-
   }
 
   useEffect(() => {

@@ -23,3 +23,10 @@
 .roster {
   border-bottom: 1px solid rgb(44, 44, 44);
 }
+
+.rosterCont {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
