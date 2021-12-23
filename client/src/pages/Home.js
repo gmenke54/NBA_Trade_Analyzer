@@ -6,6 +6,8 @@ import TradeResults from '../components/TradeResults';
 import '../css/Home.css';
 import '../css/TradeResults.css';
 
+let BASE_URL = process.env.REACT_APP_ROUTE;
+
 export default function Home(props) {
   const [teams, setTeams] = useState([]);
   const [teamsLoaded, setTeamsLoaded] = useState(false);
@@ -65,7 +67,7 @@ export default function Home(props) {
   };
 
   const getTeams = async () => {
-    const res = await axios.get(`http://localhost:3001/api/teams`);
+    const res = await axios.get(`${BASE_URL}/teams`);
     if (res.data.teams.length >= 1) {
       setTeams(res.data.teams);
       setTeamsLoaded(true);

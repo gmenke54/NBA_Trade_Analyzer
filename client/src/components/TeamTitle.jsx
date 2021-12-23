@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+let BASE_URL = process.env.REACT_APP_ROUTE
+
 const TeamTitle = (props) => {
   const [updatedTeam, setUpdatedTeam] = useState({
     team_Name:``,
@@ -8,7 +10,7 @@ const TeamTitle = (props) => {
   })
   const submit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3001/api/teams/details/${props.team_Id}`, {
+    await axios.put(`${BASE_URL}/teams/details/${props.team_Id}`, {
       team_Name: updatedTeam.team_Name,
       manager_Name: updatedTeam.manager_Name
     })

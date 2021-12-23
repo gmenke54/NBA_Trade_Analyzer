@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ResultsCard from './ResultsCard'
 
+let BASE_URL = process.env.REACT_APP_ROUTE
+
 const TradeResults = (props) => {
   const [aPlayers, setAPlayers] = useState([])
   const [bPlayers, setBPlayers] = useState([])
 
   useEffect( async () => {
     const resA = await axios.get(
-      `http://localhost:3001/api/players/${props.teamA_id}`
+      `${BASE_URL}/players/${props.teamA_id}`
     )
     const resB = await axios.get(
-      `http://localhost:3001/api/players/${props.teamB_id}`
+      `${BASE_URL}/players/${props.teamB_id}`
     )
     setAPlayers(resA.data.players)
     setBPlayers(resB.data.players)

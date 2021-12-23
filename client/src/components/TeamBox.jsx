@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Roster from "./Roster";
 import '../css/TeamBox.css'
-
 import TeamTitle from "./TeamTitle";
+
+let BASE_URL = process.env.REACT_APP_ROUTE
 
 const TeamBox = (props) => {
   const { teams, setTeams } = props
@@ -27,7 +28,7 @@ const TeamBox = (props) => {
   }, [])
 
   const getPlayers = async () => {
-    const res = await axios.get(`http://localhost:3001/api/players/${props.team_Id}`)
+    const res = await axios.get(`${BASE_URL}/players/${props.team_Id}`)
     setPlayers(res.data.players)
   }
 

@@ -35,7 +35,6 @@ const AddPlayer = (props) => {
   const postPlayer = async (nameFromAPI, idFromAPI) => {
     setRenderAddPlayer(false)
     const res1 = await axios.get(`${BASE_URL}/players`)
-    // const res1 = await axios.get(`http://localhost:3001/api/players`)
     const allPlayers1 = res1.data.players
     let found = false
     allPlayers1.map((player) => {
@@ -45,13 +44,11 @@ const AddPlayer = (props) => {
     })
     if (found === false){
       await axios.post(`${BASE_URL}/players`, {
-      // await axios.post(`http://localhost:3001/api/players`, {
       name: nameFromAPI,
       team_Id: props.team_Id,
       api_Id: idFromAPI
     })
     const res2 = await axios.get(`${BASE_URL}/players`)
-    // const res2 = await axios.get(`http://localhost:3001/api/players`)
     const allPlayers2 = res2.data.players
     const teamPlayers = allPlayers2.filter((player) => {
       return player.team_Id === props.team_Id

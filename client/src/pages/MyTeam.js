@@ -3,6 +3,8 @@ import axios from 'axios';
 import TeamBox from '../components/TeamBox';
 import AddTeam from '../components/AddTeam';
 
+let BASE_URL = process.env.REACT_APP_ROUTE;
+
 const MyTeam = (props) => {
   const [teams, setTeams] = useState([]);
   const [teamsLoaded, setTeamsLoaded] = useState(false);
@@ -13,7 +15,7 @@ const MyTeam = (props) => {
   }, []);
 
   const getTeams = async () => {
-    const res = await axios.get(`http://localhost:3001/api/teams`);
+    const res = await axios.get(`${BASE_URL}/teams`);
     console.log(res.data.teams);
     if (res.data.teams.length >= 1) {
       setTeams(res.data.teams);

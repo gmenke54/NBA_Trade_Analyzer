@@ -3,6 +3,8 @@ import axios from "axios";
 import anon from '../anon2.png'
 import '../css/PlayerCard.css'
 
+let BASE_URL = process.env.REACT_APP_ROUTE
+
 const PlayerCard = (props) => {
   const [personId, setPersonId] = useState(null)
   const [pos, setPos] = useState(null)
@@ -25,7 +27,7 @@ const PlayerCard = (props) => {
   }, [props.players])
 
   const deletePlayer = async () => {
-    await axios.delete(`http://localhost:3001/api/players/details/${props._id}`);
+    await axios.delete(`${BASE_URL}/players/details/${props._id}`);
     props.delPlayer(props._id)
   }
 
