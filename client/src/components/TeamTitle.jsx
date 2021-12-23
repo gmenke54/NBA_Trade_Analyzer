@@ -39,6 +39,7 @@ const TeamTitle = (props) => {
               onChange={(e) => handleChange(e)}
               id='team_Name'
               placeholder="update team name"
+              autoComplete="off"
             />
             <button className="updateBtn">Update</button>
           </form>
