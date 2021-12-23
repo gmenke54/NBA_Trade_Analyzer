@@ -43,6 +43,7 @@ const AddTeam = (props) => {
           onChange={(e) => handleChange(e)}
           id='team_Name'
           placeholder="enter team name"
+          autoComplete="off"
         />
         <input 
           type='text' 
@@ -51,8 +52,9 @@ const AddTeam = (props) => {
           onChange={(e) => handleChange(e)}
           id='manager_Name'
           placeholder="enter manager name"
+          autoComplete="off"
         />
-        <button className="btn">Create</button>
+        <button className="createBtn">Create</button>
       </form>
     </div>
   )
