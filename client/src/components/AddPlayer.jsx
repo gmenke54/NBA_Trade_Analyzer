@@ -32,6 +32,7 @@ const AddPlayer = (props) => {
 
   const postPlayer = async (nameFromAPI, idFromAPI) => {
     setRenderAddPlayer(false)
+    // const res1 = await axios.get(`${process.env.REACT_APP_ROUTE}/players`)
     const res1 = await axios.get(`http://localhost:3001/api/players`)
     const allPlayers1 = res1.data.players
     let found = false
@@ -41,11 +42,13 @@ const AddPlayer = (props) => {
       }
     })
     if (found === false){
+      // await axios.post(`${process.env.REACT_APP_ROUTE}/players`, {
       await axios.post(`http://localhost:3001/api/players`, {
       name: nameFromAPI,
       team_Id: props.team_Id,
       api_Id: idFromAPI
     })
+    // const res2 = await axios.get(`${process.env.REACT_APP_ROUTE}/players`)
     const res2 = await axios.get(`http://localhost:3001/api/players`)
     const allPlayers2 = res2.data.players
     const teamPlayers = allPlayers2.filter((player) => {

@@ -18,8 +18,6 @@ A Full-stack proprietary Trade Analyzer for NBA Fantasy Basketball.
 
 This is a full CRUD browser-based Fantasy Basketball Trade-Analyzer Program written in React.js, Mongoose, Express.js, and Node.js which I coded two weeks after being introduced to these languages.
 
-#### [Trello Board](https://trello.com/b/AJQwrIwD/fbb-trade-analyzer-build)
-
 ---
 
 ## **_Screenshots_**
@@ -27,14 +25,9 @@ This is a full CRUD browser-based Fantasy Basketball Trade-Analyzer Program writ
 User Interface Mock-up:
 ![**mockup**](resources/mockUp.jpeg)
 
-Final Application Screenshot:
-![**screenshot**](resources/screenshot.png)
-
-Entity Relationship Diagram:
-![**ERD**](resources/ERD.jpeg)
-
-Component Hierarchy Diagram:
-![**CHD**](resources/CHD.jpeg)
+Final Application Screenshots:
+![**trade_page**](resources/screenshot.png)
+![**home_page**](resources/screenshot2.png)
 
 ---
 
@@ -65,6 +58,8 @@ Component Hierarchy Diagram:
 
 <!-- ADD DEPLOYED LINK HERE: -->
 <!-- #### [Deployed on Heroku](grantopoly.surge.sh/) -->
+
+The Entity Relationship Diagram and Component Hierarchy Diagram I used to develop this application can be found on my **[Trello Board](https://trello.com/b/AJQwrIwD/fbb-trade-analyzer-build)**
 
 1. Navigate to the "trade" page
 2. Enter Names of the Player(s) that each team is potenially trading
