@@ -40,7 +40,7 @@ const TeamTitle = (props) => {
               id='team_Name'
               placeholder="update team name"
             />
-            <button className="btn">Update</button>
+            <button className="updateBtn">Update</button>
           </form>
             <h3>Manager: {props.manager_Name}</h3>
         </section>

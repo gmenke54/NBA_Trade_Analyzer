@@ -44,6 +44,7 @@ const getAllPlayers = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
+
 // more efficient way to get all the players on a team:
 const getPlayersOnTeam = async (req, res) => {
   try {

@@ -21,7 +21,6 @@ const AddTeam = (props) => {
       manager_Name:``
     }
     setNewTeam(anotherTeam)
-    // DIFFICULT BONUS: do this without reloading the entire page
     window.location.reload()
     
   }

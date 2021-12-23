@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ResultsCard from './ResultsCard'
 
-
 const TradeResults = (props) => {
   const [aPlayers, setAPlayers] = useState([])
   const [bPlayers, setBPlayers] = useState([])

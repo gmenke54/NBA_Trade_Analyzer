@@ -12,7 +12,6 @@ const SeasonCard = (props) => {
     setStats(res.data.data[0])
   }
 
-
   let seasEnd = (props.season -1999)
   if (seasEnd<10){
     seasEnd = `0${seasEnd}`

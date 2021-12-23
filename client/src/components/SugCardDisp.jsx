@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
 const SugCardDisp = (props) => {
   const [personId, setPersonId] = useState(null)
 
@@ -11,7 +10,6 @@ const SugCardDisp = (props) => {
       } 
     })
   }, [props.curPlayers])
-
 
   return (
     <div>

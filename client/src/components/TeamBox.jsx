@@ -3,9 +3,7 @@ import axios from "axios";
 import Roster from "./Roster";
 import '../css/TeamBox.css'
 
-
 import TeamTitle from "./TeamTitle";
-
 
 const TeamBox = (props) => {
   const { teams, setTeams } = props

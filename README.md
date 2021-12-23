@@ -10,7 +10,7 @@
 
 ![**Fantasy Basketball**](https://www.legitgamblingsites.com/wp-content/uploads/2017/09/Fantasy-Basketball-with-court1-1024x499.jpg)
 
-A Full-stack original Trade Analyzer for NBA Fantasy Basketball.
+A Full-stack proprietary Trade Analyzer for NBA Fantasy Basketball.
 
 ---
 
@@ -27,16 +27,14 @@ This is a full CRUD browser-based Fantasy Basketball Trade-Analyzer Program writ
 User Interface Mock-up:
 ![**mockup**](resources/mockUp.jpeg)
 
+Final Application Screenshot:
+![**screenshot**](resources/screenshot.png)
+
 Entity Relationship Diagram:
 ![**ERD**](resources/ERD.jpeg)
 
 Component Hierarchy Diagram:
 ![**CHD**](resources/CHD.jpeg)
-
-<!-- ADD SCREENSHOT HERE -->
-
-Final Application Screenshot:
-![**screenshot**](resources/screenshot.png)
 
 ---
 
@@ -53,22 +51,25 @@ Final Application Screenshot:
 
 ## **_Roadmap (Future Updates)_**
 
-<!-- Update these with relevant future updates: -->
-
-- ~~completed update~~
-- future update
+- ~~Add Trade Analyzer Page~~
+- Add User Authentication
+- Refactor database to store each user's fantasy team(s)
+- Deploy on Heroku
+- Refactor Trade Page to be temporary display that doesn't edit the database
+- Add Live NBA Scores Page
+- Make View Stats a more efficient page
 
 ---
 
 ## **_Getting Started_**
 
 <!-- ADD DEPLOYED LINK HERE: -->
+<!-- #### [Deployed on Heroku](grantopoly.surge.sh/) -->
 
-#### [Deployed on Heroku](grantopoly.surge.sh/)
-
-1. Enter Names of the Player(s) that each team is potenially trading
-2. Press the "Analyze Trade" button
-3. View the results
+1. Navigate to the "trade" page
+2. Enter Names of the Player(s) that each team is potenially trading
+3. Press the "Analyze Trade" button
+4. View the results
 
 ---
 
@@ -77,3 +78,11 @@ Final Application Screenshot:
 **Fantasy Basketball Title Image:** [DuckDuckGo](https://www.legitgamblingsites.com/wp-content/uploads/2017/09/Fantasy-Basketball-with-court1-1024x499.jpg)
 
 **Logo Designed Using:** [Canva](https://www.canva.com/)
+
+**NBA Stats API:** [balldontlie.io](https://www.balldontlie.io/#introduction)
+
+**Dark Theme Inspiration:** [material.io](https://material.io/design/color/dark-theme.html)
+
+**NBA Historical Stats:** [nba.com](https://www.nba.com/stats/alltime/#!?SeasonType=Regular%20Season&PerMode=PerGame)
+
+**NBA Player Pictures:** [Avinash Sarguru](https://medium.com/@avinash.sarguru/getting-nba-player-pictures-for-you-application-6106d5530943)

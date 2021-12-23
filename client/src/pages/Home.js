@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import TeamBox from '../components/TeamBox';
 import AddTeam from '../components/AddTeam';
 import TradeResults from '../components/TradeResults';

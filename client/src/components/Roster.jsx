@@ -10,7 +10,6 @@ const Roster = (props) => {
     setPlayers(players.filter((player) => {
       setRenderResults(false)
       return player._id !== curPlyId
-
     }))
   }
   
