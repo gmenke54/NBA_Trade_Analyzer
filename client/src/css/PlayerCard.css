@@ -1,0 +1,70 @@
+.playerCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgb(44, 44, 44);
+  border-bottom: 1px solid rgb(44, 44, 44);
+}
+.playerCard:hover {
+  background-color: #313131;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.pos {
+  border: 2px solid #03dac5;
+  padding: 2.8px 5.6px 2px 5.6px;
+  border-radius: 100px;
+  color: #03dac5;
+  font-size: 17px;
+}
+
+.delBtn,
+.addBtn {
+  padding: 2px 15px 2px 15px;
+  background-color: #03dac5;
+  color: rgb(44, 44, 44);
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.addBtn:hover {
+  background-color: #9cf5ec;
+  box-shadow: 0px 0px 13px 4px rgba(0, 0, 0, 0.88);
+}
+
+.delBtn:hover {
+  background-color: #cf6679;
+  box-shadow: 0px 0px 13px 4px rgba(0, 0, 0, 0.88);
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.player-info-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rosterPics {
+  width: 75px;
+  margin: 0 7px 0 7px;
+}
+
+.nba-name {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+}
+
+.player-name {
+  font-weight: 600;
+  font-size: 20px;
+}

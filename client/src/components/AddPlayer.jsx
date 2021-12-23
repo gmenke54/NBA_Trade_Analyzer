@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SugCard from "./SugCard";
+import '../css/SearchSug.css'
 
 const AddPlayer = (props) => {
   const { players, setPlayers, togAddPlayer, setRenderAddPlayer } = props

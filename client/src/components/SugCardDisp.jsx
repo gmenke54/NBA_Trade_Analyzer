@@ -18,7 +18,10 @@ const SugCardDisp = (props) => {
       {personId ? (
         <div className='sugCard' onClick={props.onClick}>
           <img className="sugPics" src={personId} />
-          <h5>{props.fName} {props.lName} - {props.team}</h5>
+          <div className="sug-text">
+            <div className="sug-name">{props.fName} {props.lName}</div>
+            <div className="sug-team">{props.team}</div>
+          </div> 
         </div>
       ) : (
         null

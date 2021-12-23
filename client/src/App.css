@@ -6,66 +6,9 @@
   color: rgba(255, 255, 255, 0.87);
 }
 
-/* h1 h2 h3 h4 h5 h6 {
-  padding: 0;
-  margin: 0;
-} */
-
 .addTeamForm {
   display: flex;
   flex-direction: column;
-}
-
-.playerCard {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 5px;
-  color: rgba(255, 255, 255, 0.65);
-  border-top: 1px solid rgb(44, 44, 44);
-  border-bottom: 1px solid rgb(44, 44, 44);
-}
-.playerCard:hover {
-  background-color: #313131;
-  border-radius: 5px;
-  color: rgba(255, 255, 255, 0.87);
-}
-
-.pos {
-  border: 2px solid #03dac5;
-  padding: 2.8px 5.6px 2px 5.6px;
-  border-radius: 100px;
-  color: #03dac5;
-  font-size: 17px;
-}
-
-.delBtn {
-  padding: 2px 15px 2px 15px;
-  background-color: #03dac5;
-  color: rgb(44, 44, 44);
-  border-radius: 15px;
-  font-size: 20px;
-}
-
-.delBtn:hover {
-  background-color: #cf6679;
-}
-
-.searchSug {
-  display: flex;
-  flex-direction: column;
-}
-
-.statsLine {
-  display: flex;
-  justify-content: space-around;
-  width: 100vw;
-}
-
-.statsHeader {
-  font-weight: bold;
 }
 
 .pointsRow {
@@ -73,43 +16,10 @@
   justify-content: space-around;
 }
 
-.searchSugs {
-  position: absolute;
-  background-color: rgb(200, 225, 236, 0.9);
-  opacity: 100%;
-}
-
-.sugCard {
-  display: flex;
-  font-size: medium;
-  color: black;
-}
-
-.sugCard:hover {
-  background-color: lightgray;
-}
-
-.sugPics {
-  height: 40px;
-}
-
-.rosterPics {
-  width: 75px;
-}
-
 .statBtnBar {
   display: flex;
   justify-content: center;
   margin-bottom: 2vh;
-}
-
-.vStats {
-  margin-bottom: 2px;
-}
-
-.detPic {
-  width: 260px;
-  height: 190px;
 }
 
 .false {

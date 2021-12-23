@@ -9,9 +9,10 @@
 }
 
 .teamName {
-  font-size: 3.25vw;
+  font-size: 2.5vw;
   margin: 5px 0 10px 0;
   font-weight: 700;
+  cursor: default;
 }
 
 .teamBoxTitle {
@@ -25,7 +26,7 @@
 }
 
 .rosterCont {
-  min-height: 40vh;
+  min-height: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

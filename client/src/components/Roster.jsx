@@ -58,7 +58,7 @@ const Roster = (props) => {
             />
           </div>
         ) : (
-          <div className="delBtn" onClick={togAddPlayer}>+</div>
+          <div className="addBtn" onClick={togAddPlayer}>+</div>
         )}
       </div>
 

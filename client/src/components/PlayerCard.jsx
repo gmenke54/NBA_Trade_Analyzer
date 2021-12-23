@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import anon from '../anon2.png'
+import '../css/PlayerCard.css'
 
 const PlayerCard = (props) => {
   const [personId, setPersonId] = useState(null)
@@ -30,41 +31,43 @@ const PlayerCard = (props) => {
 
   return (
     <div className="playerCard">
-      <div>
-        {pos ? (
-          <div>
-            <div className="pos">{pos}</div>
-          </div>
-        ) : (
-          <div>
-            Loading Data...
-          </div>
-        )}
-      </div>
-      <div>
-        {personId ? (
-          <div>
-          <img className="rosterPics" src={personId} />
-          </div>
-        ) : (
-          <div>
-            <img className="rosterPics" src={anon} />
-          </div>
-        )}
-      </div>
-      <div>
-        {pos ? (
-          <div>
-            <h3 onClick={props.onClick}>{props.name} {nbaTeam} - {pos}</h3>
-          </div>
-        ) : (
-          <div>
-            Loading Data...
-          </div>
-        )}
-      </div>
+      <section className="player-info-cont">
+        <div>
+          {pos ? (
+            <div>
+              <div className="pos">{pos}</div>
+            </div>
+          ) : (
+            <div>
+              Loading Data...
+            </div>
+          )}
+        </div>
+        <div>
+          {personId ? (
+            <div>
+            <img className="rosterPics" src={personId} />
+            </div>
+          ) : (
+            <div>
+              <img className="rosterPics" src={anon} />
+            </div>
+          )}
+        </div>
+        <div>
+          {pos ? (
+            <div className="player-info" onClick={props.onClick}>
+              <div className="player-name" >{props.name}</div>
+              <div className="nba-name">{nbaTeam}</div>
+            </div>
+          ) : (
+            <div>
+              Loading Data...
+            </div>
+          )}
+        </div>
+      </section>
       <div className="delBtn" onClick={deletePlayer}>-</div>
-      {/* <button onClick={deletePlayer}>DEL</button> */}
     </div>
   )
 }

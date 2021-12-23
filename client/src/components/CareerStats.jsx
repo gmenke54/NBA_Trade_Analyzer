@@ -40,16 +40,19 @@ const CareerStats = (props) => {
   }, [renderStats])
 
   return (
-    <div>
-      <h3 className="vStats">View Stats</h3>
-      <div className="statBtnBar">
-        <button className="btn" onClick={togRenderCurStats}>Current</button>
-        <button className="btn" onClick={togRenderRecStats}>Recent</button>
-        <button className="btn" onClick={togRenderStats}>Career</button>
+    <div className="view-stats-cont">
+      <div className="stats-controller">
+        <div className="vStats">View Stats</div>
+        <div className="statBtnBar">
+          <div className="statsBtn" onClick={togRenderCurStats}>Current</div>
+          <div className="statsBtn" onClick={togRenderRecStats}>Recent</div>
+          <div className="statsBtn" onClick={togRenderStats}>Career</div>
+        </div>
       </div>
+
       <div>
         {renderStats === true ? (
-          <div>
+          <div className="stats-box">
             <div>
               <div className="statsLine statsHeader">
                 <div>Season</div>
@@ -66,7 +69,7 @@ const CareerStats = (props) => {
                 <div>TO</div>
               </div>
             </div>
-              <div>
+              <div className="stats-cont">
                 <SeasonCard {...props} season={2021} id={props.id} />
                 <SeasonCard {...props} season={2020} id={props.id} />
                 <SeasonCard {...props} season={2019} id={props.id} />
@@ -94,7 +97,7 @@ const CareerStats = (props) => {
       </div>
       <div>
         {renderCurStats === true ? (
-          <div>
+          <div className="stats-box">
             <div>
               <div className="statsLine statsHeader">
                 <div>Season</div>
@@ -111,7 +114,7 @@ const CareerStats = (props) => {
                 <div>TO</div>
               </div>
             </div>
-              <div>
+              <div className="stats-cont" >
                 <SeasonCard {...props} season={2021} id={props.id} />
               </div>
           </div>
@@ -121,7 +124,7 @@ const CareerStats = (props) => {
       </div>
       <div>
         {renderRecStats === true ? (
-          <div>
+          <div className="stats-box">
             <div>
               <div className="statsLine statsHeader">
                 <div>Season</div>
@@ -138,7 +141,7 @@ const CareerStats = (props) => {
                 <div>TO</div>
               </div>
             </div>
-              <div>
+              <div className="stats-cont">
                 <SeasonCard {...props} season={2021} id={props.id} />
                 <SeasonCard {...props} season={2020} id={props.id} />
                 <SeasonCard {...props} season={2019} id={props.id} />
