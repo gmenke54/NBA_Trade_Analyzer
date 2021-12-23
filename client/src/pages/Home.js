@@ -5,9 +5,9 @@ import TeamBox from '../components/TeamBox';
 import AddTeam from '../components/AddTeam';
 import TradeResults from '../components/TradeResults';
 import '../css/Home.css';
+import '../css/TradeResults.css';
 
 export default function Home(props) {
-  // let history = useHistory();
   const [teams, setTeams] = useState([]);
   const [teamsLoaded, setTeamsLoaded] = useState(false);
   const [renderResults, setRenderResults] = useState(false);
@@ -75,6 +75,36 @@ export default function Home(props) {
     }
   };
 
+  let btnClassPts = ['catBtn', `${pts}`];
+  btnClassPts = btnClassPts.join(' ');
+
+  let btnFgp = ['catBtn', `${fgp}`];
+  btnFgp = btnFgp.join(' ');
+
+  let btnFtp = ['catBtn', `${ftp}`];
+  btnFtp = btnFtp.join(' ');
+
+  let btnFg3m = ['catBtn', `${fg3m}`];
+  btnFg3m = btnFg3m.join(' ');
+
+  let btnReb = ['catBtn', `${reb}`];
+  btnReb = btnReb.join(' ');
+
+  let btnAst = ['catBtn', `${ast}`];
+  btnAst = btnAst.join(' ');
+
+  let btnSt = ['catBtn', `${st}`];
+  btnSt = btnSt.join(' ');
+
+  let btnBlk = ['catBtn', `${blk}`];
+  btnBlk = btnBlk.join(' ');
+
+  let btnTurnOver = ['catBtn', `${turnOver}`];
+  btnTurnOver = btnTurnOver.join(' ');
+
+  let btnFtm = ['catBtn', `${ftm}`];
+  btnFtm = btnFtm.join(' ');
+
   if (teamsLoaded === true) {
     return (
       <div>
@@ -124,43 +154,47 @@ export default function Home(props) {
             </div>
             {renderResults === true ? (
               <div>
-                <button onClick={reload}>Back</button>
+                <div className="backBtn" onClick={reload}>
+                  Back
+                </div>
               </div>
             ) : (
               <div className="trade-sec">
                 <div className="catBtnBar">
-                  <button className={pts} onClick={puntPts}>
+                  <div className={btnClassPts} onClick={puntPts}>
                     PTS
-                  </button>
-                  <button className={fgp} onClick={puntFgp}>
+                  </div>
+                  <div className={btnFgp} onClick={puntFgp}>
                     FG%
-                  </button>
-                  <button className={ftp} onClick={puntFtp}>
+                  </div>
+                  <div className={btnFtp} onClick={puntFtp}>
                     FT%
-                  </button>
-                  <button className={fg3m} onClick={puntFg3m}>
+                  </div>
+                  <div className={btnFg3m} onClick={puntFg3m}>
                     3PTM
-                  </button>
-                  <button className={reb} onClick={puntReb}>
+                  </div>
+                  <div className={btnReb} onClick={puntReb}>
                     REB
-                  </button>
-                  <button className={ast} onClick={puntAst}>
+                  </div>
+                  <div className={btnAst} onClick={puntAst}>
                     AST
-                  </button>
-                  <button className={st} onClick={puntSt}>
+                  </div>
+                  <div className={btnSt} onClick={puntSt}>
                     STL
-                  </button>
-                  <button className={blk} onClick={puntBlk}>
+                  </div>
+                  <div className={btnBlk} onClick={puntBlk}>
                     BLK
-                  </button>
-                  <button className={turnOver} onClick={puntTurnOver}>
+                  </div>
+                  <div className={btnTurnOver} onClick={puntTurnOver}>
                     TO
-                  </button>
-                  <button className={ftm} onClick={puntFtm}>
+                  </div>
+                  <div className={btnFtm} onClick={puntFtm}>
                     FTM
-                  </button>
+                  </div>
                 </div>
-                <button onClick={analyze}>Analyze Trade</button>
+                <div className="analyzeBtn" onClick={analyze}>
+                  Analyze Trade
+                </div>
               </div>
             )}
             {renderResults === true ? (

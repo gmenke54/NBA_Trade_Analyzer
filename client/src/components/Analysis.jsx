@@ -6,6 +6,9 @@ const Analysis = (props) => {
   const [complete, setComplete] = useState(false)
   const [aValue, setAValue] = useState(null)
   const [bValue, setBValue] = useState(null)
+  const [bDiv, setBDiv] = useState(null)
+  const [aDiv, setADiv] = useState(null)
+  const [reaction, setReaction] = useState(null)
 
   const compareTeams = () => {
     let aPointsArr = aStats.map((ply) => {
@@ -101,7 +104,17 @@ const Analysis = (props) => {
       }
     }
     console.log(aVal, bVal)
-    aVal > bVal ? (setBetterTeam(props.teamA_name)) : (setBetterTeam(props.teamB_name))
+    if (aVal>bVal) {
+      setADiv('green')
+      setBDiv('red')
+      setReaction('Nice!')
+      setBetterTeam(props.teamA_name)
+    } else {
+      setBDiv('green')
+      setADiv('red')
+      setReaction('Uh-oh!')
+      setBetterTeam(props.teamB_name)
+    }
     if (bVal !== 0){
       setComplete(true)
       setAValue(aVal*10)
@@ -118,21 +131,21 @@ const Analysis = (props) => {
     <div>
       {complete === true ? (
         <div>
-          <h2>{betterTeam} is the better trade package </h2>
+          <div className="reaction">{reaction} {betterTeam} is the better trade package! </div>
           <section className="pointsRow">
-            <div>
-              <h4>
+            <div className={aDiv}>
+              <div className="res-name">
                 {props.teamA_name} Value:
-              </h4>
-              <div>
+              </div>
+              <div className="res-value">
                 {aValue.toFixed(1)}
               </div>
             </div>
-            <div>
-              <h4>
+            <div className={bDiv}>
+              <div className="res-name">
                 {props.teamB_name} Value:
-              </h4>
-              <div>
+              </div>
+              <div className="res-value">
                 {bValue.toFixed(1)}
               </div>
             </div>
