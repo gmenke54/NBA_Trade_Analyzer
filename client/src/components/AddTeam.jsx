@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+let BASE_URL = process.env.REACT_APP_ROUTE
+
 const AddTeam = (props) => {
   const { teams, setTeams, setTeamsLoaded } = props
   const [newTeam, setNewTeam] = useState({
@@ -9,11 +11,11 @@ const AddTeam = (props) => {
   })
   const submit = async (e) => {
     e.preventDefault();
-    await axios.post(`http://localhost:3001/api/teams`, {
+    await axios.post(`${BASE_URL}/teams`, {
       team_Name: newTeam.team_Name,
       manager_Name: newTeam.manager_Name
     })
-    const res = await axios.get(`http://localhost:3001/api/teams`)
+    const res = await axios.get(`${BASE_URL}/teams`)
     console.log(res)
     setTeams(res.data.teams)
     let anotherTeam = {

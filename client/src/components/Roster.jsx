@@ -44,7 +44,7 @@ const Roster = (props) => {
           }
         })}
       </div>
-      <div>
+      <div className="add-cont">
         {renderAddPlayer===true ? (
           <div>
             <AddPlayer 

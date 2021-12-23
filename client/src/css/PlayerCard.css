@@ -25,12 +25,27 @@
 
 .delBtn,
 .addBtn {
-  padding: 2px 15px 2px 15px;
   background-color: #03dac5;
   color: rgb(44, 44, 44);
-  border-radius: 15px;
-  font-size: 20px;
   cursor: pointer;
+}
+
+.delBtn {
+  font-size: 30px;
+  padding: 0px 14px 2px 14px;
+  border-radius: 10px;
+}
+
+.addBtn {
+  margin-top: 0.5vh;
+  font-size: 25px;
+  padding: 8px 17px 10px 16.5px;
+  border-radius: 50px;
+}
+
+.add-cont {
+  display: flex;
+  justify-content: center;
 }
 
 .addBtn:hover {
