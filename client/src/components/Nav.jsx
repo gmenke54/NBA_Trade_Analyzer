@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import SearchSuggestions from './SearchSuggestions';
 import logo from '../bball.png'
 import '../css/Nav.css'
+// import { BASE_URL } from '../globals'
 
 function Nav(props) {
   return (
     <nav className="navBar">
-      <a href="http://localhost:3000/">
+      <a href={window.location.origin}>
         <img src={logo} className="App-logo" alt="logo" />
       </a>
       <div className='linksBar'>
