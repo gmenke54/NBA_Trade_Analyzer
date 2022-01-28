@@ -12,7 +12,7 @@ const PlayerCard = (props) => {
 
   useEffect( async () => {
     const res = await axios.get(
-      `http://data.nba.net/data/10s/prod/v1/2021/players.json`
+      `https://data.nba.net/data/10s/prod/v1/2021/players.json`
     )
     res.data.league.standard.map((player) => {
       if (props.name === `${player.firstName} ${player.lastName}`){
