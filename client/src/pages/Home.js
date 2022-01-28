@@ -5,8 +5,7 @@ import AddTeam from '../components/AddTeam';
 import TradeResults from '../components/TradeResults';
 import '../css/Home.css';
 import '../css/TradeResults.css';
-
-let BASE_URL = process.env.REACT_APP_ROUTE;
+import { BASE_URL } from '../globals';
 
 export default function Home(props) {
   const [teams, setTeams] = useState([]);

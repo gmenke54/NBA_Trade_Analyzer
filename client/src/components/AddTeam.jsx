@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-let BASE_URL = process.env.REACT_APP_ROUTE
+import { BASE_URL } from '../globals'
 
 const AddTeam = (props) => {
   const { teams, setTeams, setTeamsLoaded } = props

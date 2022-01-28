@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
-let BASE_URL = process.env.REACT_APP_ROUTE
+import { BASE_URL } from '../globals'
 
 const TeamTitle = (props) => {
   const [updatedTeam, setUpdatedTeam] = useState({

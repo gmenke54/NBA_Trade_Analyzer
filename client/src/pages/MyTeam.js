@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TeamBox from '../components/TeamBox';
 import AddTeam from '../components/AddTeam';
-
-let BASE_URL = process.env.REACT_APP_ROUTE;
+import { BASE_URL } from '../globals';
 
 const MyTeam = (props) => {
   const [teams, setTeams] = useState([]);

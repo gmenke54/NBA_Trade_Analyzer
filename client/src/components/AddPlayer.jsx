@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SugCard from "./SugCard";
 import '../css/SearchSug.css'
+import { BASE_URL } from '../globals'
 
-let BASE_URL = process.env.REACT_APP_ROUTE
 
 const AddPlayer = (props) => {
   const { players, setPlayers, togAddPlayer, setRenderAddPlayer } = props

@@ -3,7 +3,7 @@ import axios from "axios";
 import anon from '../anon2.png'
 import '../css/PlayerCard.css'
 
-let BASE_URL = process.env.REACT_APP_ROUTE
+import { BASE_URL } from '../globals'
 
 const PlayerCard = (props) => {
   const [personId, setPersonId] = useState(null)

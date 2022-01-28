@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ResultsCard from './ResultsCard'
 
-let BASE_URL = process.env.REACT_APP_ROUTE
+import { BASE_URL } from '../globals'
 
 const TradeResults = (props) => {
   const [aPlayers, setAPlayers] = useState([])

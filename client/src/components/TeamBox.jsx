@@ -4,7 +4,7 @@ import Roster from "./Roster";
 import '../css/TeamBox.css'
 import TeamTitle from "./TeamTitle";
 
-let BASE_URL = process.env.REACT_APP_ROUTE
+import { BASE_URL } from '../globals'
 
 const TeamBox = (props) => {
   const { teams, setTeams } = props
