@@ -19,6 +19,7 @@
   background-color: rgb(39, 39, 39);
   padding: 0 3vw 0 3vw;
   border-radius: 10px;
+  cursor: default;
 }
 
 .player-detail-pic {
@@ -36,6 +37,7 @@
   border-radius: 100px;
   color: #03dac5;
   font-size: 30px;
+  cursor: default;
 }
 
 .statsBtn {
