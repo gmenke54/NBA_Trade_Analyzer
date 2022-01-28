@@ -56,7 +56,7 @@ const SearchSuggestions = (props) => {
                         fName={player.first_name}
                         lName={player.last_name}
                         team={player.team.abbreviation}
-                        onClick={() => window.location.href=`http://localhost:3000/players/details/${plyName}`}
+                        onClick={() => window.location.href=`${window.location.origin}/players/details/${plyName}`}
                       />
                     )
                   }
