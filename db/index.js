@@ -9,8 +9,8 @@ let dbUrl =
 mongoose
   .connect(dbUrl, {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useFindAndModify: true
+    useNewUrlParser: true
+    // useFindAndModify: true
   })
   .then(() => {
     console.log('Successfully connected to MongoDB.');
