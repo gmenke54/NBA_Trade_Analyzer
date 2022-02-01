@@ -10,7 +10,9 @@ const SearchSuggestions = (props) => {
 
   const searchPlayer = async () => {
     console.log('searching for players')
-    const res = await axios.get(`https://www.balldontlie.io/api/v1/players?search=${newPlayer.name}&per_page=100`)
+    const res = await axios.get(`https://www.balldontlie.io/api/v1/players?search=${newPlayer.name}&per_page=100`, {
+      headers: {"Access-Control-Allow-Origin": "*"}
+    })
     let unsortedArr = res.data.data
     unsortedArr.sort((a, b) => {
       return a.id - b.id

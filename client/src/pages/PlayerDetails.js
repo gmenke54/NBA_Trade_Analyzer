@@ -9,7 +9,10 @@ const PlayerDetails = (props) => {
 
   const getPlayer = async () => {
     const res = await axios.get(
-      `https://balldontlie.io/api/v1/players?search=${props.match.params.name}`
+      `https://balldontlie.io/api/v1/players?search=${props.match.params.name}`,
+      {
+        headers: { 'Access-Control-Allow-Origin': '*' }
+      }
     );
     console.log(res.data.data[0]);
     setPly(res.data.data[0]);
