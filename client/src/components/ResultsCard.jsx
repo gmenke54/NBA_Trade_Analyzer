@@ -12,17 +12,13 @@ const TradeResults = (props) => {
       let plyId = player.api_Id.toString()
       acc += `player_ids[]=${plyId}&`
       return acc
-    }, 'https://www.balldontlie.io/api/v1/season_averages?', {
-      headers: {"Access-Control-Allow-Origin": "*"}
-    })
+    }, 'https://www.balldontlie.io/api/v1/season_averages?')
     const res = await (axios.get(`${apiCall}`))
     const apiCall2 = bPlayers.reduce((acc, player) => {
       let plyId = player.api_Id.toString()
       acc += `player_ids[]=${plyId}&`
       return acc
-    }, 'https://www.balldontlie.io/api/v1/season_averages?', {
-      headers: {"Access-Control-Allow-Origin": "*"}
-    })
+    }, 'https://www.balldontlie.io/api/v1/season_averages?')
     const res2 = await (axios.get(`${apiCall2}`))
     setAStats(res.data.data)
     setBStats(res2.data.data)

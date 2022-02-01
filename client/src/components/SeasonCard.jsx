@@ -6,9 +6,7 @@ const SeasonCard = (props) => {
 
   const getStats = async () => {
     const res = await axios.get(
-      `https://www.balldontlie.io/api/v1/season_averages?season=${props.season}&player_ids[]=${props.id}`, {
-        headers: {"Access-Control-Allow-Origin": "*"}
-      }
+      `https://www.balldontlie.io/api/v1/season_averages?season=${props.season}&player_ids[]=${props.id}`
     )
     console.log(res.data.data[0])
     setStats(res.data.data[0])
