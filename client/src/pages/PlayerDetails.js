@@ -9,7 +9,7 @@ const PlayerDetails = (props) => {
 
   const getPlayer = async () => {
     const res = await axios.get(
-      `https://balldontlie.io/api/v1/players?search=${props.match.params.name}`
+      `https://www.balldontlie.io/api/v1/players?search=${props.match.params.name}`
     );
     console.log(res.data.data[0]);
     setPly(res.data.data[0]);

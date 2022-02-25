@@ -20,7 +20,7 @@ const PlayerCard = (props) => {
       }
     })
     const res2 = await axios.get(
-      `https://balldontlie.io/api/v1/players?search=${props.name}`)
+      `https://www.balldontlie.io/api/v1/players?search=${props.name}`)
     setNbaTeam(res2.data.data[0].team.abbreviation)
     setPos(res2.data.data[0].position[0])
   }, [props.players])
