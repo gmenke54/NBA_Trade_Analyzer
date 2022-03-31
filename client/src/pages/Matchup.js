@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import TeamBox from '../components/TeamBox';
+import ScoreBoard from '../components/ScoreBoard';
 import AddTeam from '../components/AddTeam';
-import TradeResults from '../components/TradeResults';
 import '../css/Home.css';
 import '../css/TradeResults.css';
 import { BASE_URL } from '../globals';
@@ -15,14 +14,6 @@ export default function Home(props) {
   useEffect(() => {
     getTeams();
   }, [renderResults]);
-
-  const analyze = () => {
-    setRenderResults(true);
-  };
-
-  const reload = () => {
-    setRenderResults(false);
-  };
 
   const getTeams = async () => {
     const res = await axios.get(`${BASE_URL}/teams`);
@@ -39,7 +30,7 @@ export default function Home(props) {
       <div>
         {teams.length === 1 ? (
           <div className="teamBoxesCont">
-            <TeamBox
+            <ScoreBoard
               {...props}
               teams={teams}
               setTeams={setTeams}
@@ -58,7 +49,7 @@ export default function Home(props) {
         ) : (
           <div className="body">
             <div className="teamBoxesCont">
-              <TeamBox
+              <ScoreBoard
                 {...props}
                 teams={teams}
                 setTeams={setTeams}
@@ -69,7 +60,7 @@ export default function Home(props) {
                 setRenderResults={setRenderResults}
                 displayTitle={false}
               />
-              <TeamBox
+              <ScoreBoard
                 {...props}
                 teams={teams}
                 setTeams={setTeams}
