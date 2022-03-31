@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import SearchSuggestions from './SearchSuggestions';
 import logo from '../bball.png'
 import '../css/Nav.css'
-// import { BASE_URL } from '../globals'
 
 function Nav(props) {
   return (
@@ -17,6 +16,9 @@ function Nav(props) {
         </div>
         <div className='link trade-link'>
           <Link to="/trade" style={{ textDecoration: 'none', color: 'rgba(255, 255, 255, 0.87)', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>Trade</Link>
+        </div>
+        <div className='link matchup-link'>
+          <Link to="/matchup" style={{ textDecoration: 'none', color: 'rgba(255, 255, 255, 0.87)', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>Matchup</Link>
         </div>
         <div className='link'>
           <Link to="/about" style={{ textDecoration: 'none', color: 'rgba(255, 255, 255, 0.87)', fontFamily: 'Teko, sans-serif', fontSize: '33px' }}>About</Link>
