@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import About from './pages/About';
 import PlayerDetails from './pages/PlayerDetails';
 import MyTeam from './pages/MyTeam';
+import Matchup from './pages/Matchup';
 
 function App(props) {
   return (
@@ -18,6 +19,11 @@ function App(props) {
         <Route
           path="/players/details/:name"
           component={(props) => <PlayerDetails {...props} />}
+        />
+        <Route
+          exact
+          path="/matchup"
+          component={(props) => <Matchup {...props} />}
         />
       </Switch>
     </div>
