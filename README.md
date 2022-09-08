@@ -47,7 +47,7 @@ Final Application Screenshots:
 - ~~Add Trade Analyzer Page~~
 - Add User Authentication
 - Refactor database to store each user's fantasy team(s)
-- Deploy on Heroku
+- ~~Deploy on Heroku
 - Refactor Trade Page to be temporary display that doesn't edit the database
 - Add Live NBA Scores Page
 - Make View Stats a more efficient page
