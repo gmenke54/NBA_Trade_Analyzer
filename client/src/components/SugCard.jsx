@@ -7,7 +7,7 @@ const SugCard = (props) => {
 
   useEffect( async () => {
     const res = await axios.get(
-      `https://data.nba.net/data/10s/prod/v1/2021/players.json`
+      `https://data.nba.net/data/10s/prod/v1/2022/players.json`
     )
     setCurPlayers(res.data.league.standard)
   }, [props.params])
