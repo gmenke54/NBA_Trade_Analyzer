@@ -3,7 +3,9 @@ const Player = require('../models/player');
 
 const createTeam = async (req, res) => {
   try {
+    console.log("here insdie create team before create team")
     const team = await new Team(req.body);
+    console.log("inside create team after new Team:", team)
     await team.save();
     return res.status(201).json({
       team
